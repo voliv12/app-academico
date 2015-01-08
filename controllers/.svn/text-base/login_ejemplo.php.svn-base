@@ -1,0 +1,23 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Login_ejemplo extends CI_Controller {
+
+    function index()
+    {
+        $data['title'] = "My Real Title";
+        $data['heading'] = "My Real Heading";
+        
+        // vamos a integrar la plantilla del index del blog
+        $contenido['entrada_title'] = 'Hola Mundo';
+        $contenido['entrada'] = 'Estoy aprendiendo CodeIgniter ^_^';
+        $contenido['comentarios'] = 'Mundo: me parece bien!';
+
+        // checa esto!
+        $data['contenido'] = $this->load->view('Vlogin_ejemplo', $contenido, true);
+
+        // y ya con esto terminamos
+        $this->load->view('Vplantilla_ejemplo', $data);
+    }
+    
+    
+}  

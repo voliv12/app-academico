@@ -1,0 +1,3 @@
+<h1><?php echo $entrada_title; ?></h1>
+<p><?php echo $entrada;?></p>
+<blockquote><?php echo $comentarios; ?></blockquote>

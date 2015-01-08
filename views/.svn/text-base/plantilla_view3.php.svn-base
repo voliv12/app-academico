@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title><?php echo $titulo; ?></title>
+	<link rel="stylesheet" href="../../../blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="../../../blueprint/print.css" type="text/css" media="print">	
+	<!--[if lt IE 8]><link rel="stylesheet" href="../../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<style type="text/css">
+		#cabecera{
+			background-color: #26354a;
+			color: #fff;
+			margin-bottom: 10px;
+			overflow: hidden;
+		}
+		#logo{
+			padding: 10px 5px;
+			font-size: 250%;
+			font-weight: bold;
+			color: #ff9;
+		}
+		#buscador{
+			padding: 25px;
+		}
+		#pie{
+			background-color: #006600;
+			color: #fff;
+		}
+		#enlacespie{
+			font-size: 120%;
+			font-weight: bold;
+			padding: 10px 5px;
+		}
+		#encabezado{
+			padding: 30px 30px;
+			font-size: 160%;
+			color: #ff9;
+			font-weight: bold;
+		}
+		#input_text{
+		border-width: thin;
+		border-style: solid;
+		border-color: green;
+		font-size: 10pt;
+		font-family: Calibri;
+		
+		}
+		.input_button{
+		border-width: thin;
+		border-style: solid;
+		border-color: green;
+		color: white;
+		background-color: green;
+		}
+	</style>
+</head>
+<body>
+    <div id="cabecera">
+
+		<div class="container">
+			<div class="span-3">
+				<div id="">
+					<img alt="" src="imagenes/logoics.png">
+				</div>
+			</div>
+			<div class="span-18">
+				<div id="encabezado">
+					INSTITUTO DE CIENCIAS DE LA SALUD | Universidad Veracruzana
+				</div>
+			</div>
+			<div class="span-3 push-1 last">
+				<div id="">
+					<img alt="" src="imagenes/logouv.png">	
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="span-5">
+			<div class="box">
+				<ul>
+				<li><a href="#">Enlace 1</a></li>
+
+				<li><a href="#">Enlace segundo</a></li>
+				<li><a href="#">Secciones de interés</a></li>
+				<li><a href="#">Más cosas</a></li>
+				<li><a href="#">120 tópicos guays</a></li>
+				<li><a href="#">Ya está bien</a></li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="span-19 last">
+			<div class="box">
+			<?php echo $formulario_login; ?>
+			</div>
+		</div>
+	</div>
+	<div id="pie">
+		<div class="container">
+			<div class="span-21">
+				<div id="enlacespie">
+					Enlaces | Típicos | De los que | Se colocan | En el pie
+				</div>
+
+			</div>
+			<div class="span-3 last">
+				<div id="impie">
+					logo en pequeño
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

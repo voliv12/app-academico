@@ -1,0 +1,24 @@
+
+<?php echo validation_errors(); ?>
+
+<?php echo form_open('login'); ?>
+
+<div><?php echo $no_personal; ?></div>
+
+<div>
+<input type="text" id="input_text" name="no_personal" value="" size="30" />
+</div>
+
+<div><?php echo $contrasena; ?></div>
+
+<div>
+<input type="password" id="input_text" name="contrasena" value="" size="30" />
+</div>
+
+<div>
+<input type="submit" class="input_button" value="Entrar" />
+</div>
+
+</form>
+
+

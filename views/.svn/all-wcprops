@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/7/trunk/SIICS_CI/views
+END
+Vlogin_ejemplo.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7/trunk/SIICS_CI/views/Vlogin_ejemplo.php
+END
+welcome_message.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7/trunk/SIICS_CI/views/welcome_message.php
+END
+login_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8/trunk/SIICS_CI/views/login_view.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7/trunk/SIICS_CI/views/index.html
+END
+plantilla_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8/trunk/SIICS_CI/views/plantilla_view.php
+END
+Vplantilla_ejemplo.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7/trunk/SIICS_CI/views/Vplantilla_ejemplo.php
+END

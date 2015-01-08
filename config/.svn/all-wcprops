@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/7/trunk/SIICS_CI/config
+END
+profiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7/trunk/SIICS_CI/config/profiler.php
+END
+routes.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7/trunk/SIICS_CI/config/routes.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7/trunk/SIICS_CI/config/database.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7/trunk/SIICS_CI/config/index.html
+END
+constants.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7/trunk/SIICS_CI/config/constants.php
+END
+mimes.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7/trunk/SIICS_CI/config/mimes.php
+END
+hooks.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7/trunk/SIICS_CI/config/hooks.php
+END
+doctypes.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7/trunk/SIICS_CI/config/doctypes.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7/trunk/SIICS_CI/config/config.php
+END
+foreign_chars.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7/trunk/SIICS_CI/config/foreign_chars.php
+END
+smileys.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7/trunk/SIICS_CI/config/smileys.php
+END
+user_agents.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7/trunk/SIICS_CI/config/user_agents.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7/trunk/SIICS_CI/config/autoload.php
+END

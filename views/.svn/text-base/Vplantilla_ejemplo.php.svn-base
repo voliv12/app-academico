@@ -1,0 +1,13 @@
+<html>
+<head>
+<title><?php echo $title;?></title>
+</head>
+<body>
+    <div id="menu">Aquí va el menú</div>
+    <div id="sidebar">Aquí van links estáticos y también dinámicos</div>
+    <div id="contenido">
+           <h1><?php echo $heading;?></h1> 
+           <?php echo $contenido; ?>
+    </div>
+</body>
+</html>
