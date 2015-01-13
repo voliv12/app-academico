@@ -52,3 +52,4 @@ Class Articulos extends CI_controller{
                 redirect('login');
             }
         }
+    }
