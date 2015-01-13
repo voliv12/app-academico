@@ -16,7 +16,7 @@ foreach($css_files as $file): ?>
 
 <?php echo validation_errors(); ?>
 
-<div class="alert alert-success"><h4><?php echo $titulo_tabla; ?></h4></div>
+<?php echo $titulo_tabla; ?>
     <div>
 		<?php echo $output; ?>
     </div>
