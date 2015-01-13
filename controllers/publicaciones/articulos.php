@@ -64,9 +64,13 @@ Class Articulos extends CI_controller{
                 redirect('login');
             }
         }
+<<<<<<< HEAD
+    }
+=======
 
         /*function add_field()
         {
             return '<input type="text" maxlength="50" value="'.$this->noPersonal.'" name="Academico_noPersonal" readonly>';
         }*/
 }
+>>>>>>> origin/master
