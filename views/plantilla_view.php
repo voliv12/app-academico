@@ -14,9 +14,6 @@
     <script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/jquery.ui.draggable.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/DataTables-1.8.1/media/js/jquery.js"></script>
-        <script type="text/javascript" src="js/DataTables-1.8.1/media/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="js/DataTables-1.8.1/media/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="js/DataTables-1.8.1/media/js/jquery.dataTables.editable.js"></script>
         <script type="text/javascript" src="js/jquery.jeditable.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
@@ -25,9 +22,6 @@
         <script type="text/javascript" src="js/exporting.js"></script>
         <script type="text/javascript" src="js/exporting.src.js"></script>
 
-        <link rel="stylesheet" href="js/DataTables-1.8.1/media/css/demo_table.css" type="text/css">
-        <link rel="stylesheet" href="js/DataTables-1.8.1/media/css/demo_table_jui.css" type="text/css">
-        <link rel="stylesheet" href="js/DataTables-1.8.1/media/css/demo_page.css" type="text/css">
         <link rel="stylesheet" href="js/themes/smoothness/jquery-ui-1.8.16.custom.css" type="text/css">
         <link rel="stylesheet" href="js/themes/base/jquery.ui.base.css" type="text/css">
 
