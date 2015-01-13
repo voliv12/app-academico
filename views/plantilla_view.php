@@ -25,8 +25,6 @@
         <link rel="stylesheet" href="js/themes/smoothness/jquery-ui-1.8.16.custom.css" type="text/css">
         <link rel="stylesheet" href="js/themes/base/jquery.ui.base.css" type="text/css">
 
-        <script type="text/javascript" src="js/vanadium.js"></script>
-
         <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

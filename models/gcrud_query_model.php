@@ -69,7 +69,7 @@ class Gcrud_query_model extends grocery_CRUD_model {
 
         $results = $this->db->get()->result();
         //var_dump($this->db->last_query());  //For debugging
-        echo "<br>";
+        //echo "<br>";
 
         return $results;    }
 
