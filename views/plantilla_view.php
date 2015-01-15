@@ -48,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand">Sistema de Información Academica: <b>Módulo de Producción</b></a>
+          <a class="brand">Sistema de Información Academica: <b>Producción</b></a>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> <?php
@@ -71,8 +71,12 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="academico/control"><i class="icon-home"></i> Inicio</a></li>
+              <?php if ($this->session->userdata('informe') == "Si") { ?>
               <li><a href="informe/personal_academico"><i class="icon-list-alt"></i> Reportes</a></li>
-              <li><a href="curriculum"><i class="icon-download-alt"></i> Descargar CV</a></li>
+              <?php } ?>
+              <?php if ($this->session->userdata('administrar_usuarios') == "Si") { ?>
+              <li><a href="usuarios/academico"><i class="icon-plus-sign"></i> Administrar usuarios</a></li>
+              <?php } ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -143,6 +147,10 @@
                    <li><a href="institucional/reconocimientos/control"><i class="icon-certificate"></i> Reconocimientos</a></li>
                    <li><a href="institucional/eventos/control"><i class="icon-calendar"></i> Eventos académicos organizados</a></li>
                 </ul>
+              </div>
+              <div class="btn-group">
+                 <button class="btn" >
+                  <a href="curriculum"><img src="imagenes/word.png"> Descargar CV</a></button>
               </div>
             </div>
           </div>

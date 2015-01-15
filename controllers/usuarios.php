@@ -16,27 +16,30 @@ Class Usuarios extends CI_controller{
         function _example_output($output = null)
         {
             $datos_plantilla['titulo'] = "Administración de Usuarios";
-            $output->titulo_tabla = "Administración de Usuarios";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
 
         }
 
-        function perfil()
+        function perfil($noPersonal)
         {
              if (($this->session->userdata('logged_in') == TRUE) AND ($this->session->userdata('administrar_usuarios') == "Si") )
             {
                 $crud = new grocery_CRUD();
-
+                $crud->where('Academico_noPersonal', $noPersonal);
                 $crud->set_table('perfil');
                 $crud->set_subject('Perfil');
                 $crud->set_relation('Academico_noPersonal', 'academico', 'nombre');
                 $crud->change_field_type('password', 'password');
-                //$crud->required_fields('nombre_catedra','nivel','programa','tipo','modalidad','periodo','estado');
+                $crud->field_type('Academico_noPersonal','readonly');
+                $crud->display_as('Academico_noPersonal', 'Académico');
+                $crud->unset_add();
+                $crud->unset_delete();
                 $crud->callback_before_insert(array($this,'encrypt_password_callback'));
                 $crud->callback_before_update(array($this,'encrypt_password_callback'));
 
                 $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Permisos del usuario</h4></div>';
                 $this->_example_output($output);
             }else
             {
@@ -53,8 +56,14 @@ Class Usuarios extends CI_controller{
                 $crud->set_table('academico');
                 $crud->set_subject('Académico');
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
-
+                $crud->columns('noPersonal', 'nombre', 'categoria', 'grado');
+                $crud->required_fields('noPersonal', 'nombre', 'categoria', 'grado', 'departamento');
+                $crud->add_action('Asignar permisos', 'imagenes/key.png', 'usuarios/perfil');
+                $crud->callback_after_insert(array($this, 'insertar_en_perfil'));
+                $crud->callback_after_insert(array($this, 'insertar_en_perfil'));
+                $crud->unset_edit();
                 $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Administración de usuarios</h4></div>';
                 $this->_example_output($output);
             }else
             {
@@ -69,6 +78,17 @@ Class Usuarios extends CI_controller{
             $post_array['password'] = $this->encrypt->sha1($post_array['password']);
 
             return $post_array;
+        }
+
+        function insertar_en_perfil($post_array,$primary_key)
+        {
+            $insert_noPersonal = array(
+                "Academico_noPersonal" => $post_array['noPersonal']
+            );
+
+            $this->db->insert('perfil',$insert_noPersonal);
+
+            return true;
         }
 
         /*function encrypt_password_callback_2($post_array, $primary_key) {
