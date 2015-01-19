@@ -31,9 +31,9 @@ Class Articulos extends CI_controller{
                 $msj = Null;
                 if($sin_publicar != 0)
                 {
-                    $msj = "<b>".$total_pub."</b> artículos en total. Tiene <b>".$sin_publicar."</b> artículos que no han sido Publicados, por favor verique y actualice su Estatus si es necesario.";
+                    $msj = "<b>".$total_pub."</b> artículo(s) en total. Tiene <b>".$sin_publicar."</b> artículo(s) que no han sido Publicados, por favor verique y actualice su Estatus si es necesario.";
                 }else{
-                    $msj = "<b>".$total_pub."</b> artículos Publicados en total.";
+                    $msj = "<b>".$total_pub."</b> artículo(s) Publicados en total.";
                 }
 
                 $crud = new grocery_CRUD();
@@ -50,13 +50,13 @@ Class Articulos extends CI_controller{
                 $crud->columns('fecha','titulo','autor','nombre_revista','estatus');
                 $crud->unset_columns('posicion');
                 $crud->required_fields('fecha','version','participantes','total_autores','autor','titulo','nombre_revista','tipo','estatus');
-                $crud->display_as('participantes','Participantes del ICS')->display_as('total_autores','Total de autores')->display_as('posicion','Posición autor')->display_as('autor','Autor(es)');
+                $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('posicion','Posición autor')->display_as('autor','Autor(es)');
                 $crud->field_type('total_autores','dropdown',range(1, 20));
                 $crud->field_type('posicion','dropdown',range(1, 20));
                 $crud->unset_texteditor('autor','full_text');
                 $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
                 $crud->set_rules('direccion_web','Dirección web','valid_url');
-                $crud->set_field_upload('documento', 'assets/uploads/files');
+                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('estatus','DESC');
 
                 //$crud->callback_add_field('Academico_noPersonal',array($this,'add_field'));

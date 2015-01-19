@@ -108,13 +108,21 @@ class Publicaciones_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-     function contar_publicaciones_academico($noPersonal)
+     function contar_publicaciones_academico($noPersonal) //Articulos por academico
     {
         $this->db->select('estatus');
         $this->db->from('articulo');
         $this->db->join('articulo_academico', 'articulo.idArticulo = articulo_academico.idArticulo');
         $this->db->join('academico', 'academico.noPersonal = articulo_academico.noPersonal');
         $this->db->where('articulo_academico.noPersonal', $noPersonal);
+        return $this->db->count_all_results();
+    }
+
+    function contar_libros_academico($campo,$tabla,$noPersonal) //Libros y Capitulos por academico
+    {
+        $this->db->select($campo);
+        $this->db->from($tabla);
+        $this->db->where('noPersonal', $noPersonal);
         return $this->db->count_all_results();
     }
 

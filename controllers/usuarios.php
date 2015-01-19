@@ -30,10 +30,38 @@ Class Usuarios extends CI_controller{
                 $crud->set_table('perfil');
                 $crud->set_subject('Perfil');
                 $crud->set_relation('Academico_noPersonal', 'academico', 'nombre');
-                $crud->change_field_type('password', 'password');
+                $crud->columns('Academico_noPersonal', 'informe', 'administrar_usuarios');
                 $crud->field_type('Academico_noPersonal','readonly');
                 $crud->display_as('Academico_noPersonal', 'Académico');
                 $crud->unset_add();
+                $crud->unset_edit_fields('password');
+                $crud->unset_delete();
+                $crud->callback_before_insert(array($this,'encrypt_password_callback'));
+                $crud->callback_before_update(array($this,'encrypt_password_callback'));
+
+                $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Permisos del usuario</h4></div>';
+                $this->_example_output($output);
+            }else
+            {
+                redirect('login');
+            }
+        }
+
+        function cambiar_password($noPersonal)
+        {
+             if (($this->session->userdata('logged_in') == TRUE) AND ($this->session->userdata('administrar_usuarios') == "Si") )
+            {
+                $crud = new grocery_CRUD();
+                $crud->where('Academico_noPersonal', $noPersonal);
+                $crud->set_table('perfil');
+                $crud->set_subject('Perfil');
+                $crud->set_relation('Academico_noPersonal', 'academico', 'nombre');
+                $crud->columns('Academico_noPersonal', 'password');
+                $crud->field_type('Academico_noPersonal','readonly')->field_type('password','password');
+                $crud->display_as('Academico_noPersonal', 'Académico');
+                $crud->unset_add();
+                $crud->unset_edit_fields('informe','administrar_usuarios');
                 $crud->unset_delete();
                 $crud->callback_before_insert(array($this,'encrypt_password_callback'));
                 $crud->callback_before_update(array($this,'encrypt_password_callback'));
@@ -58,9 +86,10 @@ Class Usuarios extends CI_controller{
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
                 $crud->columns('noPersonal', 'nombre', 'categoria', 'grado');
                 $crud->required_fields('noPersonal', 'nombre', 'categoria', 'grado', 'departamento');
+                $crud->add_action('Actualizar contraseña', 'imagenes/refresh.png', 'usuarios/cambiar_password');
                 $crud->add_action('Asignar permisos', 'imagenes/key.png', 'usuarios/perfil');
                 $crud->callback_after_insert(array($this, 'insertar_en_perfil'));
-                $crud->callback_after_insert(array($this, 'insertar_en_perfil'));
+                $crud->callback_after_insert(array($this, 'crea_directorio'));
                 $crud->unset_edit();
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Administración de usuarios</h4></div>';
@@ -74,7 +103,6 @@ Class Usuarios extends CI_controller{
         function encrypt_password_callback($post_array)
         {
             $this->load->library('encrypt');
-
             $post_array['password'] = $this->encrypt->sha1($post_array['password']);
 
             return $post_array;
@@ -90,6 +118,23 @@ Class Usuarios extends CI_controller{
 
             return true;
         }
+
+        function crea_directorio($post_array, $primary_key)
+        {
+            $this->load->helper('path');
+            $dir = 'assets/uploads/academicos/'.$post_array['noPersonal'];
+
+            if(!is_dir($dir))
+            {
+              mkdir($dir, 0777);
+            }else
+            {
+              echo "Error: El Directorio ya existe.";
+            }
+
+            return TRUE;
+        }
+
 
         /*function encrypt_password_callback_2($post_array, $primary_key) {
             $this->load->library('encrypt');
