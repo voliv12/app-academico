@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base href= "<?php echo $this->config->item('base_url'); ?>">   
+    <base href= "<?php echo $this->config->item('base_url'); ?>">
     <meta charset="utf-8">
     <title>Login &middot; Informacion Académica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="VOG" content="">
-    
+
     <script type='text/javascript' src='js/jquery-1.8.2.js'></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    
+
     <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
@@ -73,46 +73,30 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Sistema de Información Acdémica</a>
-          <div class="btn-group pull-right">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> <?php echo $this->session->userdata('nombre')?>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="disabled"><a>Favor de iniciar sesión</a></li>
-              <li class="divider"></li>             
-            </ul>
-          </div>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Inicio</a></li>                          
-              <li><a href="#contact">Contacto</a></li>           
-            </ul>                          
-          </div><!--/.nav-collapse -->
+
+          <!--/.nav-collapse -->
         </div>
       </div>
     </div>
-    
-<!--#######################################################-->      
+
+<!--#######################################################-->
       <h3 class="muted"> &nbsp; </h3>
     <div class="container">
 
-      <form class="form-signin" action="login/validar_usuario" method="POST">       
-        
+      <form class="form-signin" action="login/validar_usuario" method="POST">
+
           <h4 class="form-signin-heading">Autentificación</h4>
         <input type="text" name="noPersonal" class="input-block-level" placeholder="Número de personal">
         <input type="password" name="password" class="input-block-level" placeholder="Contraseña">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>        
+
         <button class="btn btn-large btn-primary" type="submit">Entrar</button>
       </form>
-        
+
       <hr>
-      <div class="container-fluid">                     
-             <?php echo $contenido; ?>                                   
+      <div class="container-fluid">
+             <?php echo $contenido; ?>
      </div>
-        
-    </div> <!-- /container -->   
+
+    </div> <!-- /container -->
   </body>
 </html>

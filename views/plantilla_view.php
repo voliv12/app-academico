@@ -103,6 +103,30 @@
 
     </div>
   <!--#######################################################-->
+   <!--#######################Modal Créditos################################-->
+     <div id="creditos" class="modal hide fade in" style="display: none;">
+        <div class="modal-header">
+            <a data-dismiss="modal" class="close">×</a>
+            <h3>Créditos</h3>
+         </div>
+         <div class="modal-body"  style="text-align: center">
+             <p>
+                <h4><b>Sistema de Información Académica</b></h4>
+                <h4><b>Instituto de Ciencias de la Salud</b></h4>
+                <b>Dra. Patricia Pavón León</b><br>
+                Directora del Instituto<br><br>
+                <b>Mtro. Víctor Olivares García</b><br>
+                Técnico Académico. Desarrollador del Sistema.<br><br>
+                <b>Dr. Enrique Juárez Aguilar</b><br>
+                Investigador. Asesor en el manejo de la información en el sistema.<br><br>
+                <b>Marcos Rodríguez de la Rosa</b><br>
+                Becario. Colaborador en el desarrollo del sistema.<br><br>
+             </p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+        </div>
+    </div>
+  <!--#######################################################-->
 <div class="container">
 
       <div class="masthead">
@@ -164,7 +188,7 @@
       <hr>
 
       <div class="footer">
-        <p>&copy; Instituo de Ciencias de la Salud 2013</p>
+        <p>Sistema de información Académica | ICS-2015 | <a data-toggle="modal" href="#creditos">Créditos</a> </p>
       </div>
   </body>
 </html>

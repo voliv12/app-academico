@@ -34,10 +34,10 @@ Class Tesis extends CI_controller{
                 $crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Tesis');
                 $crud->required_fields('intervencion','nombre_tesista','titulo_tesis','nivel','programa','fecha_presentacion');
-                $crud->set_field_upload('documento', 'assets/uploads/files');
+                $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
+                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_presentacion','Desc');
 
-                $crud->callback_add_field('Academico_noPersonal',array($this,'add_field'));
                 $crud->callback_add_field('programa',array($this,'add_field_programa'));
 
                 $output = $crud->render();
@@ -46,11 +46,6 @@ Class Tesis extends CI_controller{
             {
                 redirect('login');
             }
-        }
-
-        function add_field()
-        {
-            return '<input type="text" maxlength="50" value="'.$this->noPersonal.'" name="Academico_noPersonal" readonly>';
         }
 
         function add_field_programa()

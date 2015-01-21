@@ -40,7 +40,6 @@ Class Articulos extends CI_controller{
                 $crud->set_table('articulo');
                 $crud->set_model('gcrud_query_model');
                 $crud->set_subject('Artículo');
-
                 $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
                 //########Para filtrar los resultados
                 $crud->basic_model->set_join_str("articulo_academico", "articulo.idArticulo=articulo_academico.idArticulo");

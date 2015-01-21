@@ -27,7 +27,7 @@ Class Capitulos extends CI_controller{
             {
                 $this->load->model('publicaciones_model');
                  $total_cap    = $this->publicaciones_model->contar_libros_academico("idCapitulo","capitulo_academico",$this->noPersonal);
-                $msj = "<b>".$total_cap."</b> capitulo(s) Publicados en total.";
+                $msj = "<b>".$total_cap."</b> capitulo(s) de libro Publicados en total.";
 
                 $crud = new grocery_CRUD();
 

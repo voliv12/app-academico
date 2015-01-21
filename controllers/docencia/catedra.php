@@ -33,10 +33,9 @@ Class Catedra extends CI_controller{
             $crud->display_as('Academico_noPersonal','Núm. Personal');
             $crud->set_subject('Cátedra');
             $crud->required_fields('nombre_catedra','nivel','programa','tipo','modalidad','periodo','estado');
-            $crud->set_field_upload('documento', 'assets/uploads/files');
             $crud->order_by('estado','Asc');
-
-            $crud->callback_add_field('Academico_noPersonal',array($this,'add_field'));
+            $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
+            $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
             $crud->callback_add_field('programa',array($this,'add_field_programa'));
 
             $output = $crud->render();
@@ -45,11 +44,6 @@ Class Catedra extends CI_controller{
         {
             redirect('login');
         }
-    }
-
-    function add_field()
-    {
-        return '<input type="text" maxlength="50" value="'.$this->noPersonal.'" name="Academico_noPersonal" readonly>';
     }
 
     function add_field_programa()
