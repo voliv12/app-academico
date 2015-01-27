@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href= "<?php echo $this->config->item('base_url'); ?>">
 
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type='text/javascript' src='js/jquery-1.8.2.js'></script>
+
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 
@@ -36,9 +38,51 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
-</head>
+<script type="text/javascript">
+$(document).ready(function()
+  {
+    //ocultar y mostrar el campo de fecha de término en Tutorias
+  $("#fecha_termino_field_box").hide();
+  $("#field-estado").change(function () {
+    if($("#field-estado").val() == "Concluida"){
+      $("#fecha_termino_field_box").show();
+    }else{
+      $("#fecha_termino_field_box").hide();
+    }
+  });
 
- <body>
+//ocultar y mostrar el campo de Autor principal externo en Articulos
+  $("#field-autor_principal_ex").attr('disabled', true);
+  $("#field-autor_principal").change(function () {
+    if($("#field-autor_principal").val() == "0"){
+      $("#autor_principal_ex_field_box").show();
+      $("#field-autor_principal_ex").attr('disabled', false);
+    }else{
+      $("#autor_principal_ex_field_box").hide();
+      $("#field-autor_principal_ex").val("");
+    }
+  });
+
+  //ocultar y mostrar el campo de Autor de correspondencia externo en Articulos
+  $("#field-autor_correspondencia_ex").attr('disabled', true);
+  $("#field-autor_correspondencia").change(function () {
+    if($("#field-autor_correspondencia").val() == "0"){
+      $("#autor_correspondencia_ex_field_box").show();
+      $("#field-autor_correspondencia_ex").attr('disabled', false);
+    }else{
+      $("#autor_correspondencia_ex_field_box").hide();
+      $("#field-autor_correspondencia_ex").val("");
+    }
+  });
+  var noPersonal = "<?php echo $this->session->userdata('noPersonal') ?>";
+  $("#field-participantes").val(noPersonal).prop('selected', true);
+
+});
+
+</script>
+
+</head>
+<body>
 
       <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">

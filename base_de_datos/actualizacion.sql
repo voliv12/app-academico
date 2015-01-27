@@ -30,3 +30,28 @@ ALTER TABLE  `capitulo` CHANGE  `autor_interno`  `participantes` VARCHAR( 255 ) 
 CHANGE  `autor_externo`  `autor` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 
 ALTER TABLE  `capitulo` ADD  `cuerpo_academico` VARCHAR( 150 ) NULL AFTER  `lugar_publicacion`
+
+ALTER TABLE  `articulo` CHANGE  `posicion`  `autor_principal` VARCHAR( 50 ) NOT NULL
+
+ALTER TABLE  `articulo` ADD  `autor_principal_ex` VARCHAR( 255 ) NULL AFTER  `autor_principal` ,
+ADD  `autor_correspondencia` VARCHAR( 50 ) NOT NULL AFTER  `autor_principal_ex` ,
+ADD  `autor_correspondencia_ex` VARCHAR( 255 ) NULL AFTER  `autor_correspondencia`
+
+CREATE TABLE  `informacion_academica`.`departamento` (
+`idDepartamento` INT NOT NULL AUTO_INCREMENT ,
+`nombre_depto` VARCHAR( 100 ) NOT NULL ,
+PRIMARY KEY (  `idDepartamento` )
+) ENGINE = MYISAM ;
+
+ALTER TABLE  `academico` CHANGE  `departamento`  `departamento` VARCHAR( 50 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
+
+INSERT INTO  `informacion_academica`.`categoria` (
+`idCategoria` ,
+`nombre_categoria` ,
+`perfil`
+)
+VALUES (
+NULL ,  'NO APLICA',  'NO APLICA'
+);
+
+ALTER TABLE  `academico` CHANGE  `grado`  `grado` ENUM(  'Licenciatura',  'Especialidad',  'Especialidad Médica',  'Maestría',  'Doctorado',  'No aplica' ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL

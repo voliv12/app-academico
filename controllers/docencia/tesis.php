@@ -16,7 +16,6 @@ Class Tesis extends CI_controller{
         function _example_output($output = null)
         {
             $datos_plantilla['titulo'] = "Dirección de tesis";
-            $output->titulo_tabla = "Docencia - Dirección de tesis";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
 
@@ -34,6 +33,7 @@ Class Tesis extends CI_controller{
                 $crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Tesis');
                 $crud->required_fields('intervencion','nombre_tesista','titulo_tesis','nivel','programa','fecha_presentacion');
+                $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_presentacion','Desc');
@@ -41,6 +41,7 @@ Class Tesis extends CI_controller{
                 $crud->callback_add_field('programa',array($this,'add_field_programa'));
 
                 $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Dirección de tesis</h4></div>';
                 $this->_example_output($output);
             }else
             {

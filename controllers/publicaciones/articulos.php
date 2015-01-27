@@ -40,16 +40,19 @@ Class Articulos extends CI_controller{
                 $crud->set_table('articulo');
                 $crud->set_model('gcrud_query_model');
                 $crud->set_subject('Artículo');
+                $crud->set_relation('autor_principal','academico','nombre');
+                $crud->set_relation('autor_correspondencia','academico','nombre');
                 $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
                 //########Para filtrar los resultados
                 $crud->basic_model->set_join_str("articulo_academico", "articulo.idArticulo=articulo_academico.idArticulo");
                 $where_array = array("articulo_academico.noPersonal" => $this->noPersonal);
                 $crud->basic_model->set_where_str($where_array);
                 //########################*/
+
                 $crud->columns('fecha','titulo','autor','nombre_revista','estatus');
                 $crud->unset_columns('posicion');
-                $crud->required_fields('fecha','version','participantes','total_autores','autor','titulo','nombre_revista','tipo','estatus');
-                $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('posicion','Posición autor')->display_as('autor','Autor(es)');
+                $crud->required_fields('fecha','version','participantes','total_autores','autor_principal','autor_correspondencia','autor','titulo','nombre_revista','tipo','estatus');
+                $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('autor','Autor(es)')->display_as('autor_principal_ex','Autor principal externo')->display_as('autor_correspondencia_ex','Aut. corres. externo');
                 $crud->field_type('total_autores','dropdown',range(1, 20));
                 $crud->field_type('posicion','dropdown',range(1, 20));
                 $crud->unset_texteditor('autor','full_text');

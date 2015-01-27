@@ -84,13 +84,14 @@ Class Usuarios extends CI_controller{
                 $crud->set_table('academico');
                 $crud->set_subject('Académico');
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
-                $crud->columns('noPersonal', 'nombre', 'categoria', 'grado');
+                $crud->set_relation('departamento', 'departamento', 'nombre_depto');
+                $crud->columns('noPersonal', 'nombre', 'categoria', 'grado','departamento');
                 $crud->required_fields('noPersonal', 'nombre', 'categoria', 'grado', 'departamento');
                 $crud->add_action('Actualizar contraseña', 'imagenes/refresh.png', 'usuarios/cambiar_password');
                 $crud->add_action('Asignar permisos', 'imagenes/key.png', 'usuarios/perfil');
                 $crud->callback_after_insert(array($this, 'insertar_en_perfil'));
                 $crud->callback_after_insert(array($this, 'crea_directorio'));
-                $crud->unset_edit();
+                //$crud->unset_edit();
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Administración de usuarios</h4></div>';
                 $this->_example_output($output);

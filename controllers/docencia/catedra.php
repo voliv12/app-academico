@@ -16,7 +16,6 @@ Class Catedra extends CI_controller{
     function _example_output($output = null)
     {
         $datos_plantilla['titulo'] = "Cátedra impartida";
-        $output->titulo_tabla = "Docencia - Cátedra";
         $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
         $this->load->view('plantilla_view', $datos_plantilla);
     }
@@ -39,6 +38,7 @@ Class Catedra extends CI_controller{
             $crud->callback_add_field('programa',array($this,'add_field_programa'));
 
             $output = $crud->render();
+            $output->titulo_tabla = '<div class="alert alert-success"><h4>Cátedra</h4></div>';
             $this->_example_output($output);
         }else
         {
