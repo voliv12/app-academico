@@ -41,6 +41,11 @@
 <script type="text/javascript">
 $(document).ready(function()
   {
+    //Agrego opciones a los selects
+   $('#field-autor_principal').append('<option value="0">Académico externo</option>');
+   $('#field-autor_correspondencia').append('<option value="0">Académico externo</option>');
+   $('#field-cuerpo_academico').append('<option value="No aplica">No aplica</option>');
+
     //ocultar y mostrar el campo de fecha de término en Tutorias
   $("#fecha_termino_field_box").hide();
   $("#field-estado").change(function () {
@@ -74,8 +79,33 @@ $(document).ready(function()
       $("#field-autor_correspondencia_ex").val("");
     }
   });
-  var noPersonal = "<?php echo $this->session->userdata('noPersonal') ?>";
-  $("#field-participantes").val(noPersonal).prop('selected', true);
+
+  //##############
+  //$("#field-Proyecto_idProyecto").attr('disabled', true);
+  //$("#field-Cuerpo_idCuerpo").attr('disabled', true);
+  //$("#field-Posgrado_idPosgrado").attr('disabled', true);
+
+  $("#field-Destino").change(function () {
+    if($("#field-Destino").val() == "Proyecto"){
+      //$("#field-Proyecto_idProyecto").attr('disabled', false);
+      $("#Proyecto_idProyecto_field_box").show();
+      $("#Cuerpo_idCuerpo_field_box").hide();
+      $("#Posgrado_idPosgrado_field_box").hide();
+    }else if($("#field-Destino").val() == "Cuerpo Académico"){
+      $("#Cuerpo_idCuerpo_field_box").show();
+      $("#Proyecto_idProyecto_field_box").hide();
+      $("#Posgrado_idPosgrado_field_box").hide();
+    }else{
+      $("#Posgrado_idPosgrado_field_box").show();
+      $("#Cuerpo_idCuerpo_field_box").hide();
+      $("#Proyecto_idProyecto_field_box").hide();
+    }
+
+  });
+  //obtengo el numero de personal de la sesion en php
+  //var noPersonal = "<?php echo $this->session->userdata('noPersonal') ?>";
+  //$("#field-participantes").val(noPersonal).prop('selected', true);
+  //$("#field-autor_interno").val(noPersonal).prop('selected', true);
 
 });
 
@@ -204,8 +234,10 @@ $(document).ready(function()
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-folder-open icon-white"></i> Investigación <span class="caret"></span></button>
                 <ul class="dropdown-menu" align="left">
                    <li><a href="investigacion/proyectos/control"><i class="icon-briefcase"></i> Proyectos</a></li>
-                   <li><a href="investigacion/financiamiento/control"><i class="icon-tags"></i> Financiamiento</a></li>
                    <li><a href="investigacion/cuerpos/control"><i class="icon-thumbs-up"></i> Cuerpos Académicos</a></li>
+                   <li><a href="investigacion/financiamiento/control"><i class="icon-tag"></i> Financiamiento</a></li>
+                   <li><a href="investigacion/financiamiento/control"><i class="icon-thumbs-up"></i> Donaciones</a></li>
+
                 </ul>
               </div>
               <div class="btn-group">

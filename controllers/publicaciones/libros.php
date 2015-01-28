@@ -41,7 +41,7 @@ Class Libros extends CI_controller{
                 //$crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Libro');
                 $crud->required_fields('fecha','participantes','autor','titulo','editorial','tipo','lugar_publicacion');
-                $crud->display_as('participantes','Participantes internos')->display_as('autor','Autor(es)');
+                $crud->display_as('participantes','Participantes internos')->display_as('autor','Editor(es)');
                 $crud->unset_texteditor('autor','full_text');
                 $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);

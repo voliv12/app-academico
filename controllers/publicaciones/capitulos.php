@@ -33,6 +33,7 @@ Class Capitulos extends CI_controller{
 
                 $crud->set_table('capitulo');
                 $crud->set_model('gcrud_query_model');
+                $crud->set_relation('autor_principal','academico','nombre');
                 $crud->set_relation_n_n('participantes', 'capitulo_academico', 'academico', 'idCapitulo', 'noPersonal', 'nombre', 'priority');
                 $crud->basic_model->set_join_str("capitulo_academico", "capitulo.idCapitulo = capitulo_academico.idCapitulo");
                 $where_array = array("capitulo_academico.noPersonal" => $this->noPersonal);
@@ -42,7 +43,7 @@ Class Capitulos extends CI_controller{
                 //$crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Capitulo');
                 $crud->required_fields('fecha','participantes','autor','titulo','editorial','tipo','lugar_publicacion');
-                $crud->display_as('participantes','Participantes internos')->display_as('autor','Autor(es)');
+                $crud->display_as('titulo','Titulo capítulo')->display_as('participantes','Participantes internos')->display_as('autor_principal_ex','Autor principal externo')->display_as('autor','Autor(es) como aparecen en la publicación');
                 $crud->unset_texteditor('autor','full_text');
                 $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);

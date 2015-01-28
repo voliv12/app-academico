@@ -31,17 +31,17 @@ Class Proyectos extends CI_controller{
                 $crud->set_table('proyecto');
                 $crud->unset_columns('Academico_noPersonal');
                 $crud->display_as('Academico_noPersonal','Núm. Personal');
-                $crud->display_as('Lineas_idLineas','Linea investigacion');
+                $crud->display_as('Lineas_idLineas','Linea investigacion')->display_as('Registro_DGI','Fecha registro DGI')->display_as('productos','Productos comprometidos ante la DGI');
                 $crud->set_subject('Proyecto');
                 $crud->required_fields('Titulo','Lineas_idLineas','Estado');
                 $crud->set_relation('Lineas_idLineas','lineas','Lineas_investigacion');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->unset_texteditor('Observaciones','full_text');
+                //$crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->unset_texteditor('Observaciones','full_text')->unset_texteditor('productos','full_text');
                 $crud->order_by('Estado','Asc');
 
-                $crud->callback_add_field('productos',array($this,'add_field_productos'));
-                //$crud->callback_insert(array($this,'limpia_fecha'));
+                $crud->callback_before_insert(array($this,'convertir_a_mayusculas'));
+                $crud->callback_before_update(array($this,'convertir_a_mayusculas'));
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Proyectos</h4></div>';
@@ -52,10 +52,15 @@ Class Proyectos extends CI_controller{
             }
         }
 
-        function add_field_productos()
+        function convertir_a_mayusculas($post_array)
         {
-            return '<input type="text" maxlength="50" value=" " name="productos"> (Productos comprometidos ante la DGI)';
+
+            $post_array['Titulo'] = strtoupper($post_array['Titulo']);
+
+            return $post_array;
         }
+
+
 }
  /*
  * To change this template, choose Tools | Templates

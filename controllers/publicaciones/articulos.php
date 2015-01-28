@@ -52,7 +52,7 @@ Class Articulos extends CI_controller{
                 $crud->columns('fecha','titulo','autor','nombre_revista','estatus');
                 $crud->unset_columns('posicion');
                 $crud->required_fields('fecha','version','participantes','total_autores','autor_principal','autor_correspondencia','autor','titulo','nombre_revista','tipo','estatus');
-                $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('autor','Autor(es)')->display_as('autor_principal_ex','Autor principal externo')->display_as('autor_correspondencia_ex','Aut. corres. externo');
+                $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('autor','Autor(es) como aparecen en la publicación')->display_as('autor_principal_ex','Autor principal externo')->display_as('autor_correspondencia_ex','Autor correspondencia externo');
                 $crud->field_type('total_autores','dropdown',range(1, 20));
                 $crud->field_type('posicion','dropdown',range(1, 20));
                 $crud->unset_texteditor('autor','full_text');
