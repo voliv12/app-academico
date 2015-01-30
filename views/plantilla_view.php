@@ -45,7 +45,9 @@ $(document).ready(function()
    $('#field-autor_principal').append('<option value="0">Académico externo</option>');
    $('#field-autor_correspondencia').append('<option value="0">Académico externo</option>');
    $('#field-cuerpo_academico').append('<option value="No aplica">No aplica</option>');
+   $('#field-Fuente_idFuente').append('<option value="0">Otra</option>');
 
+//############# TUTORIAS ########################
     //ocultar y mostrar el campo de fecha de término en Tutorias
   $("#fecha_termino_field_box").hide();
   $("#field-estado").change(function () {
@@ -56,6 +58,7 @@ $(document).ready(function()
     }
   });
 
+//############# ARTICULOS ########################
 //ocultar y mostrar el campo de Autor principal externo en Articulos
   $("#field-autor_principal_ex").attr('disabled', true);
   $("#field-autor_principal").change(function () {
@@ -80,17 +83,14 @@ $(document).ready(function()
     }
   });
 
-  //##############
-  //$("#field-Proyecto_idProyecto").attr('disabled', true);
-  //$("#field-Cuerpo_idCuerpo").attr('disabled', true);
-  //$("#field-Posgrado_idPosgrado").attr('disabled', true);
-
+  //############## FINANCIAMIENTO ###############
   $("#field-Destino").change(function () {
     if($("#field-Destino").val() == "Proyecto"){
       //$("#field-Proyecto_idProyecto").attr('disabled', false);
       $("#Proyecto_idProyecto_field_box").show();
       $("#Cuerpo_idCuerpo_field_box").hide();
       $("#Posgrado_idPosgrado_field_box").hide();
+      $("#Proyecto_idProyecto_field_box").required();
     }else if($("#field-Destino").val() == "Cuerpo Académico"){
       $("#Cuerpo_idCuerpo_field_box").show();
       $("#Proyecto_idProyecto_field_box").hide();
@@ -100,8 +100,29 @@ $(document).ready(function()
       $("#Cuerpo_idCuerpo_field_box").hide();
       $("#Proyecto_idProyecto_field_box").hide();
     }
-
   });
+
+  $("#field-Fuente_idFuente").change(function () {
+    if($("#field-Fuente_idFuente").val() != "0"){
+      $("#Otra_fuente_field_box").hide();
+    }else{
+      $("#Otra_fuente_field_box").show();
+    }
+  });
+
+ //############## DONACIONES ###############
+  $("#field-tipo").change(function () {
+    if($("#field-tipo").val() == "Económica"){
+      $("#monto_field_box").show();
+      $("#cantidad_field_box").hide();
+      $("#descripcion_field_box").hide();
+    }else{
+      $("#monto_field_box").hide();
+      $("#cantidad_field_box").show();
+      $("#descripcion_field_box").show();
+    }
+  });
+
   //obtengo el numero de personal de la sesion en php
   //var noPersonal = "<?php echo $this->session->userdata('noPersonal') ?>";
   //$("#field-participantes").val(noPersonal).prop('selected', true);
@@ -228,6 +249,7 @@ $(document).ready(function()
                     <li><a href="docencia/catedra/control"><i class="icon-hand-up"></i> Cátedra </a></li>
                     <li><a href="docencia/tesis/control"><i class="icon-screenshot"></i> Dirección de tesis </a></li>
                     <li><a href="docencia/tutorias/control"><i class="icon-check"></i> Tutorías </a></li>
+                    <li><a href="docencia/servicio/control"><i class="icon-check"></i> Servicio Social </a></li>
                 </ul>
               </div>
               <div class="btn-group">
@@ -236,7 +258,7 @@ $(document).ready(function()
                    <li><a href="investigacion/proyectos/control"><i class="icon-briefcase"></i> Proyectos</a></li>
                    <li><a href="investigacion/cuerpos/control"><i class="icon-thumbs-up"></i> Cuerpos Académicos</a></li>
                    <li><a href="investigacion/financiamiento/control"><i class="icon-tag"></i> Financiamiento</a></li>
-                   <li><a href="investigacion/financiamiento/control"><i class="icon-thumbs-up"></i> Donaciones</a></li>
+                   <li><a href="investigacion/donaciones/control"><i class="icon-inbox"></i> Donaciones</a></li>
 
                 </ul>
               </div>
@@ -251,6 +273,10 @@ $(document).ready(function()
               <div class="btn-group">
                  <button class="btn" >
                   <a href="curriculum"><img src="imagenes/word.png"> Descargar CV</a></button>
+              </div>
+              <div class="btn-group">
+                 <button class="btn" >
+                  <a href="ayuda"><img src="imagenes/help.png"> Ayuda</a></button>
               </div>
             </div>
           </div>

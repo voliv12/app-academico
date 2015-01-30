@@ -31,7 +31,7 @@ Class Articulos extends CI_controller{
                 $msj = Null;
                 if($sin_publicar != 0)
                 {
-                    $msj = "<b>".$total_pub."</b> artículo(s) en total. Tiene <b>".$sin_publicar."</b> artículo(s) que no han sido Publicados, por favor verique y actualice su Estatus si es necesario.";
+                    $msj = "<b>".$total_pub."</b> artículo(s) en total. <b>Tiene ".$sin_publicar." artículo(s) que no han sido Publicados</b>, por favor verique y <b>actualice su Estatus</b> si es necesario.";
                 }else{
                     $msj = "<b>".$total_pub."</b> artículo(s) Publicados en total.";
                 }
@@ -59,6 +59,7 @@ Class Articulos extends CI_controller{
                 $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
                 $crud->set_rules('direccion_web','Dirección web','valid_url');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_rules('documento','Documento','max_length[26]');
                 $crud->order_by('estatus','DESC');
 
                 //$crud->callback_add_field('Academico_noPersonal',array($this,'add_field'));

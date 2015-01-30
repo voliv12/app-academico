@@ -35,6 +35,7 @@ Class Catedra extends CI_controller{
             $crud->order_by('estado','Asc');
             $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
             $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+            $crud->set_rules('documento','Documento','max_length[26]');
             $crud->callback_add_field('programa',array($this,'add_field_programa'));
 
             $output = $crud->render();

@@ -16,10 +16,8 @@ Class Cuerpos extends CI_controller{
         function _example_output($output = null)
         {
             $datos_plantilla['titulo'] = "Cuerpos Académicos";
-            $output->titulo_tabla = "Investigación - Cuerpos Académicos";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
-
         }
 
         function control()
@@ -59,6 +57,7 @@ Class Cuerpos extends CI_controller{
                 $crud->callback_before_update(array($this,'convertir_a_mayusculas'));
 
                 $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Cuerpos Académicos</h4></div>';
                 $this->_example_output($output);
             }else
             {

@@ -1,5 +1,5 @@
 <?php
-Class Reconocimientos extends CI_controller{
+Class Donaciones extends CI_controller{
 
         function __construct()
         {
@@ -15,7 +15,7 @@ Class Reconocimientos extends CI_controller{
 
         function _example_output($output = null)
         {
-            $datos_plantilla['titulo'] = "Reconocimientos otorgados";
+            $datos_plantilla['titulo'] = "Financiamiento de proyectos";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
 
@@ -27,19 +27,22 @@ Class Reconocimientos extends CI_controller{
             {
                 $crud = new grocery_CRUD();
 
-                $crud->where('Academico_noPersonal',$this->noPersonal);
-                $crud->set_table('reconocimiento');
+                $crud->where('donacion.Academico_noPersonal',$this->noPersonal);
+                $crud->set_table('donacion');
                 $crud->unset_columns('Academico_noPersonal');
-                $crud->display_as('Academico_noPersonal','Núm. Personal');
-                $crud->set_subject('Reconocimiento');
-                $crud->required_fields('nombre_reconocimiento','institucion_otorgante','tipo','fecha');
+                //$crud->display_as('Proyecto_idProyecto','Proyecto')->display_as('Cuerpo_idCuerpo','Cuerpo Académico')->display_as('Posgrado_idPosgrado','Posgrado');
+                //$crud->display_as('Fuente_idFuente','Fuente');
+                $crud->set_subject('Donación');
+                $crud->required_fields('destino','tipo','donante','fecha_donacion');
+                $crud->set_rules('monto','Monto','numeric');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->set_rules('documento','Documento','max_length[26]');
-                $crud->order_by('fecha','Desc');
+                $crud->unset_texteditor('descripcion','full_text');
+                $crud->unset_texteditor('observaciones','full_text');
+                $crud->columns('destino','tipo','donante','monto','cantidad','descripcion');
+                $crud->order_by('fecha_donacion','Desc');
 
                 $output = $crud->render();
-                $output->titulo_tabla = '<div class="alert alert-success"><h4>Reconocimientos</h4></div>';
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Donaciones</h4></div>';
                 $this->_example_output($output);
             }else
             {

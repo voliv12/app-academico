@@ -40,6 +40,7 @@ Class Ponencias extends CI_controller{
                 $crud->columns('autor_interno','autor_externo','nombre_ponencia','evento','fecha');
                 $crud->required_fields('autor_interno','nombre_ponencia','evento','lugar','fecha');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_rules('documento','Documento','max_length[26]');
                 $crud->order_by('fecha','Desc');
 
                 $output = $crud->render();

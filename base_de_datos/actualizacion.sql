@@ -85,3 +85,41 @@ PRIMARY KEY (  `idPosgrado` )
 ) ENGINE = MYISAM ;
 
 ALTER TABLE  `financiamiento` ADD  `Posgrado_idPosgrado` INT NULL AFTER  `Cuerpo_idCuerpo`
+
+INSERT INTO  `informacion_academica`.`fuente` (
+`idFuente` ,
+`Fuente`
+)
+VALUES (
+NULL ,  'PIFI'
+);
+
+UPDATE  `informacion_academica`.`fuente` SET  `Fuente` =  'CONACYT' WHERE  `fuente`.`idFuente` =1 LIMIT 1 ;
+
+CREATE TABLE  `informacion_academica`.`donacion` (
+`idDonacion` INT NOT NULL AUTO_INCREMENT ,
+`Academico_noPersonal` INT NOT NULL ,
+`destino` VARCHAR( 255 ) NOT NULL ,
+`tipo` ENUM(  'Económica',  'Material',  'Reactivo' ) NOT NULL ,
+`monto` INT NULL ,
+`cantidad` VARCHAR( 100 ) NULL ,
+`descripcion` VARCHAR( 255 ) NULL ,
+`donante` VARCHAR( 255 ) NOT NULL ,
+`fecha_donacion` DATE NOT NULL ,
+`observaciones` TEXT NULL ,
+PRIMARY KEY (  `idDonacion` )
+) ENGINE = MYISAM ;
+
+ALTER TABLE `articulo` MODIFY COLUMN `total_autores` int( 11 ) AFTER `titulo`
+
+CREATE TABLE  `informacion_academica`.`servicio_social` (
+`idServicio` INT NOT NULL AUTO_INCREMENT ,
+`Academico_noPersonal` INT NOT NULL ,
+`nombre_alumno` VARCHAR( 255 ) NOT NULL ,
+`matricula` VARCHAR( 20 ) NULL ,
+`facultad` VARCHAR( 100 ) NOT NULL ,
+`fecha_inicio` DATE NOT NULL ,
+`fecha_termino` DATE NOT NULL ,
+`area_instituto` VARCHAR( 255 ) NOT NULL ,
+PRIMARY KEY (  `idServicio` )
+) ENGINE = MYISAM ;

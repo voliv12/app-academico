@@ -35,16 +35,11 @@ Class Tutorias extends CI_controller{
                 $crud->required_fields('nombre_alumno','nivel','programa','fecha_inicio','estado');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_rules('documento','Documento','max_length[26]');
                 $crud->order_by('estado','Asc');
                 $crud->display_as('matricula','Matrícula')->display_as('fecha_termino','Fecha término');
                 $crud->callback_add_field('programa',array($this,'add_field_programa'));
-                //$crud->callback_add_field('fecha_inicio',array($this,'add_field_inicio'));
-                //$crud->callback_add_field('fecha_termino',array($this,'add_field_termino'));
-                //$crud->callback_before_insert(array($this,'limpia_fecha'));
-                //$crud->callback_before_update(array($this,'limpia_fecha'));
 
-                //$crud->set_lang_string('insert_error', 'El campo "Fecha termino" debe ser nulo');//Mensaje por si hay un error al insertar
-                //$crud->set_lang_string('update_error', 'El campo "Fecha termino" debe ser nulo');//Mensaje por si hay un error al actualizar
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Tutorías</h4></div>';

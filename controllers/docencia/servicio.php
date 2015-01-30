@@ -1,11 +1,11 @@
 <?php
-Class Tesis extends CI_controller{
+Class Servicio extends CI_controller{
 
         function __construct()
         {
             parent::__construct();
 
-            /* Standard Libraries */
+           /* Standard Libraries */
             $this->load->database();
             $this->load->helper('url');
             /* ------------------ */
@@ -15,7 +15,7 @@ Class Tesis extends CI_controller{
 
         function _example_output($output = null)
         {
-            $datos_plantilla['titulo'] = "Dirección de tesis";
+            $datos_plantilla['titulo'] = "Servicio Social";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
 
@@ -28,21 +28,17 @@ Class Tesis extends CI_controller{
                 $crud = new grocery_CRUD();
 
                 $crud->where('Academico_noPersonal',$this->noPersonal);
-                $crud->set_table('tesis');
+                $crud->set_table('servicio_social');
                 $crud->unset_columns('Academico_noPersonal');
-                $crud->display_as('Academico_noPersonal','Núm. Personal');
-                $crud->set_subject('Tesis');
-                $crud->required_fields('intervencion','nombre_tesista','titulo_tesis','nivel','programa','fecha_presentacion');
-                $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
+                $crud->set_subject('Servicio Social');
+                $crud->required_fields('nombre_alumno','facultad', 'fecha_inicio','fecha_de_termino','area_instituto');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->set_rules('documento','Documento','max_length[26]');
-                $crud->order_by('fecha_presentacion','Desc');
-
-                $crud->callback_add_field('programa',array($this,'add_field_programa'));
+                //$crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->order_by('fecha_inicio','Desc');
+                //$crud->display_as('matricula','Matrícula')->display_as('fecha_termino','Fecha término');
 
                 $output = $crud->render();
-                $output->titulo_tabla = '<div class="alert alert-success"><h4>Dirección de tesis</h4></div>';
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Servicio Social</h4></div>';
                 $this->_example_output($output);
             }else
             {
@@ -50,10 +46,6 @@ Class Tesis extends CI_controller{
             }
         }
 
-        function add_field_programa()
-        {
-            return '<input type="text" maxlength="200" name="programa"> (Nombre de la carrera o posgrado)';
-        }
 }
  /*
  * To change this template, choose Tools | Templates
