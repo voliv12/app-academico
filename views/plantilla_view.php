@@ -248,7 +248,7 @@ $(document).ready(function()
                 <ul class="dropdown-menu" align="left">
                     <li><a href="docencia/catedra/control"><i class="icon-hand-up"></i> Cátedra </a></li>
                     <li><a href="docencia/tesis/control"><i class="icon-screenshot"></i> Dirección de tesis </a></li>
-                    <li><a href="docencia/tutorias/control"><i class="icon-check"></i> Tutorías </a></li>
+                    <li><a href="docencia/tutorias_sit/control"><i class="icon-check"></i> Tutorías </a></li>
                     <li><a href="docencia/servicio/control"><i class="icon-check"></i> Servicio Social </a></li>
                 </ul>
               </div>

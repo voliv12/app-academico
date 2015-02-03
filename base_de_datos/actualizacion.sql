@@ -123,3 +123,22 @@ CREATE TABLE  `informacion_academica`.`servicio_social` (
 `area_instituto` VARCHAR( 255 ) NOT NULL ,
 PRIMARY KEY (  `idServicio` )
 ) ENGINE = MYISAM ;
+
+CREATE TABLE  `informacion_academica`.`facultad` (
+`idFacultad` INT NOT NULL AUTO_INCREMENT ,
+`nombre_facultad` VARCHAR( 100 ) NOT NULL ,
+PRIMARY KEY (  `idFacultad` )
+) ENGINE = MYISAM ;
+
+EXPORTAR TODA LA TABLA DE facultad
+
+CREATE TABLE  `informacion_academica`.`tutoria_sit` (
+`idTutoria_sit` INT NOT NULL AUTO_INCREMENT ,
+`nivel` ENUM(  'Licenciatura',  'Posgrado' ) NOT NULL ,
+`facultad` VARCHAR( 100 ) NOT NULL ,
+`posgrado` VARCHAR( 100 ) NOT NULL ,
+`total_alumnos` INT NOT NULL ,
+`reporte_SIT` VARCHAR( 255 ) NOT NULL ,
+`vigente` BOOL NOT NULL ,
+PRIMARY KEY (  `idTutoria_sit` )
+) ENGINE = MYISAM ;
