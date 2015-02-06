@@ -134,6 +134,7 @@ EXPORTAR TODA LA TABLA DE facultad
 
 CREATE TABLE  `informacion_academica`.`tutoria_sit` (
 `idTutoria_sit` INT NOT NULL AUTO_INCREMENT ,
+`Academico_noPersonal` INT NOT NULL ,
 `nivel` ENUM(  'Licenciatura',  'Posgrado' ) NOT NULL ,
 `facultad` VARCHAR( 100 ) NOT NULL ,
 `posgrado` VARCHAR( 100 ) NOT NULL ,

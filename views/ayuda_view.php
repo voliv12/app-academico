@@ -21,7 +21,7 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Opciones Generales 
+          Opciones Generales
         </a>
       </h4>
     </div>
@@ -95,7 +95,7 @@
         </a>
       </h4>
     </div>
-    <div id="collapseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
        <img src="assets\ManualUsuario\catedra1.png">
       </div>
@@ -161,7 +161,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsedoce" aria-expanded="false" aria-controls="collapseThree">
-          Cuerpos Académicos 
+          Cuerpos Académicos
         </a>
       </h4>
     </div>
@@ -175,7 +175,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsetrece" aria-expanded="false" aria-controls="collapseThree">
-          Financiamiento 
+          Financiamiento
         </a>
       </h4>
     </div>
@@ -189,7 +189,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsecatorce" aria-expanded="false" aria-controls="collapseThree">
-          Donaciones 
+          Donaciones
         </a>
       </h4>
     </div>
@@ -203,7 +203,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsequince" aria-expanded="false" aria-controls="collapseThree">
-          Vinculación 
+          Vinculación
         </a>
       </h4>
     </div>
@@ -217,13 +217,13 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsedieciseis" aria-expanded="false" aria-controls="collapseThree">
-          Reconocimietos
+          Reconocimientos
         </a>
       </h4>
     </div>
     <div id="collapsedieciseis" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\reconocimieto.png">
+       <img src="assets\ManualUsuario\reconocimiento.png">
       </div>
     </div>
   </div>
@@ -231,7 +231,7 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsediecisiete" aria-expanded="false" aria-controls="collapseThree">
-          Eventos Académicos   
+          Eventos Académicos
         </a>
       </h4>
     </div>

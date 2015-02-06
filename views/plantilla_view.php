@@ -47,7 +47,7 @@ $(document).ready(function()
    $('#field-cuerpo_academico').append('<option value="No aplica">No aplica</option>');
    $('#field-Fuente_idFuente').append('<option value="0">Otra</option>');
 
-//############# TUTORIAS ########################
+/*/############# TUTORIAS ########################
     //ocultar y mostrar el campo de fecha de término en Tutorias
   $("#fecha_termino_field_box").hide();
   $("#field-estado").change(function () {
@@ -56,7 +56,7 @@ $(document).ready(function()
     }else{
       $("#fecha_termino_field_box").hide();
     }
-  });
+  });*/
 
 //############# ARTICULOS ########################
 //ocultar y mostrar el campo de Autor principal externo en Articulos
@@ -123,6 +123,31 @@ $(document).ready(function()
     }
   });
 
+  //############## TUTORIAS DEL SIT ###############
+  $("#field-nivel").change(function () {
+    if($("#field-nivel").val() == "Licenciatura"){
+      $("#facultad_field_box").show();
+      $("#posgrado_field_box").hide();
+    }else{
+      $("#posgrado_field_box").show();
+      $("#facultad_field_box").hide();
+    }
+  });
+
+  $('#save-and-go-back-button').on('click' ,function(){
+    if($("#field-facultad").val() == "" && $("#field-posgrado").val() == ""){
+      alert('Falta seleccionar la Facultad o el Posgrado');
+      window.history.reload();
+    }
+  });
+  $('#form-button-save').on('click' ,function(e){
+    if($("#field-facultad").val() == "" && $("#field-posgrado").val() == ""){
+      alert('Falta seleccionar la Facultad o el Posgrado');
+      e.preventDefault();
+      window.history.reload();
+    }
+  });
+
   //obtengo el numero de personal de la sesion en php
   //var noPersonal = "<?php echo $this->session->userdata('noPersonal') ?>";
   //$("#field-participantes").val(noPersonal).prop('selected', true);
@@ -147,15 +172,11 @@ $(document).ready(function()
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> <?php
-                                            //$this->load->helper('text');
-                                            //$count = count(explode(" ", $this->session->userdata('nombre')));
-                                            //echo word_limiter($this->session->userdata('nombre'), $count - 1, " ");
                                             echo $this->session->userdata('nombre');
                                         ?>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-
               <li class="disabled"><a><?php echo $this->session->userdata('perfil'); ?></a></li>
               <li class="divider"></li>
                <!-- Button trigger modal -->
@@ -171,6 +192,20 @@ $(document).ready(function()
               <?php } ?>
               <?php if ($this->session->userdata('administrar_usuarios') == "Si") { ?>
               <li><a href="usuarios/academico"><i class="icon-plus-sign"></i> Administrar usuarios</a></li>
+              <!--li><a href="catalogos"><i class="icon-th-list"></i> Catálogos</a></li-->
+                <div class="btn-group pull-right">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="icon-th-list"></i> Catálogos <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="catalogos/categoria"></i> Categoría</a></li>
+                  <li><a href="catalogos/departamento"></i> Departamento</a></li>
+                  <li><a href="catalogos/facultad"></i> Facultad</a></li>
+                  <li><a href="catalogos/posgrado"></i> Posgrado</a></li>
+                  <li><a href="catalogos/lineas"></i> Lineas de investigación</a></li>
+                  <li><a href="catalogos/fuentes"></i> Fuentes de financiamiento</a></li>
+                </ul>
+              </div>
               <?php } ?>
             </ul>
           </div><!--/.nav-collapse -->

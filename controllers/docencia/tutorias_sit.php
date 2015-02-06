@@ -1,5 +1,5 @@
 <?php
-Class Tutorias extends CI_controller{
+Class Tutorias_sit extends CI_controller{
 
         function __construct()
         {
@@ -30,16 +30,17 @@ Class Tutorias extends CI_controller{
                 $crud->where('Academico_noPersonal',$this->noPersonal);
                 $crud->set_table('tutoria_sit');
                 $crud->unset_columns('Academico_noPersonal');
-                $crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Tutoria');
-                $crud->required_fields('nombre_alumno','nivel','programa','fecha_inicio','estado');
+                $crud->required_fields('nivel','total_alumnos','reporte_SIT','vigente');
+                $crud->set_relation('facultad','facultad','nombre_facultad');
+                $crud->set_relation('posgrado','posgrado','nombre_posgrado');
+                //$crud->columns('nivel','facultad','posgrado','total_alumnos','vigente');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->set_rules('documento','Documento','max_length[26]');
-                $crud->order_by('estado','Asc');
-                $crud->display_as('matricula','Matrícula')->display_as('fecha_termino','Fecha término');
-                $crud->callback_add_field('programa',array($this,'add_field_programa'));
-
+                $crud->field_type('total_alumnos', 'dropdown', range(1,40));
+                $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_rules('reporte_SIT','Reporte del SIT','required|max_length[26]');
+                $crud->order_by('vigente','Asc');
+                $crud->display_as('reporte_SIT','Reporte del SIT');
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Tutorías</h4></div>';
@@ -50,10 +51,6 @@ Class Tutorias extends CI_controller{
             }
         }
 
-        function add_field_programa()
-        {
-            return '<input type="text" maxlength="50" name="programa"> (Nombre de la carrera o posgrado)';
-        }
 }
  /*
  * To change this template, choose Tools | Templates

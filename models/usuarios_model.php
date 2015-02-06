@@ -13,9 +13,9 @@ class Usuarios_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('perfil');
-        $this->db->join('academico','academico.noPersonal = perfil.academico_noPersonal');
+        $this->db->join('academico','academico.noPersonal = perfil.Academico_noPersonal');
         $this->db->join('categoria','academico.categoria = categoria.idCategoria');
-        $this->db->where('academico_noPersonal', $usuario);
+        $this->db->where('Academico_noPersonal', $usuario);
         $this->db->where('password', $password);
         $query = $this->db->get();
 

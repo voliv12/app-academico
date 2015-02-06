@@ -16,7 +16,6 @@ Class Academico extends CI_controller{
         function _example_output($output = null)
         {
             $datos_plantilla['titulo'] = "Academico";
-            $output->titulo_tabla = "Información del Académico";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
 
@@ -31,13 +30,13 @@ Class Academico extends CI_controller{
                 $crud->where('noPersonal',$this->noPersonal);
                 $crud->set_table('academico');
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
+                $crud->set_relation('departamento', 'departamento', 'nombre_depto');
                 $crud->unset_columns('noPersonal','direccion','rfc','curp','correos');
-                $crud->unset_edit_fields('noPersonal','departamento');
-
                 $crud->unset_add();
                 $crud->unset_delete();
 
                 $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Información personal del Académico</h4></div>';
                 $this->_example_output($output);
             }else
             {
