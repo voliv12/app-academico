@@ -306,12 +306,10 @@ $(document).ready(function()
                 </ul>
               </div>
               <div class="btn-group">
-                 <button class="btn" >
-                  <a href="curriculum"><img src="imagenes/word.png"> Descargar CV</a></button>
+                 <a href="curriculum"><img src="imagenes/word.png" title="Descargar CV en Word"> Descargar CV</a>
               </div>
               <div class="btn-group">
-                 <button class="btn" >
-                  <a href="ayuda"><img src="imagenes/help.png"> Ayuda</a></button>
+                  <a href="ayuda"><img src="imagenes/help.png" title="Ayuda"> Ayuda</a>
               </div>
             </div>
           </div>
