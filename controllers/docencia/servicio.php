@@ -32,6 +32,7 @@ Class Servicio extends CI_controller{
                 $crud->unset_columns('Academico_noPersonal');
                 $crud->set_subject('Servicio Social');
                 $crud->required_fields('nombre_alumno','facultad', 'fecha_inicio','fecha_de_termino','area_instituto');
+                $crud->display_as('area_instituto','Area donde realiza el servicio');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
                 //$crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_inicio','Desc');
