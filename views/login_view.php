@@ -72,7 +72,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Sistema de Información Acdémica</a>
+          <a class="brand" href="#">Sistema de Información Académica</a>
 
           <!--/.nav-collapse -->
         </div>

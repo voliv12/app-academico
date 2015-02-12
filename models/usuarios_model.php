@@ -38,6 +38,15 @@ class Usuarios_model extends CI_Model
         return $query->result_array();
      }
 
+      function contar_academicos_grado($grado)
+    {
+        $this->db->select('*');
+        $this->db->from('academico');
+        $this->db->where('grado', $grado);
+        $this->db->where('categoria <>', 'No aplica');
+        return $this->db->count_all_results();
+     }
+
      function contar_investigadores_tc()
     {
         $this->db->select('*');
@@ -72,8 +81,10 @@ class Usuarios_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('academico');
-        $this->db->where('departamento',$depto); //Busco a los investigadores por departamento
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
+        $this->db->where('departamento.nombre_depto',$depto); //Busco a los investigadores por departamento
         return $this->db->count_all_results();
      }
+
 }
 

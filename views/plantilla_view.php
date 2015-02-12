@@ -45,6 +45,8 @@ $(document).ready(function()
    $('#field-autor_principal').append('<option value="0">Académico externo</option>');
    $('#field-autor_correspondencia').append('<option value="0">Académico externo</option>');
    $('#field-cuerpo_academico').append('<option value="No aplica">No aplica</option>');
+   $('#field-categoria').append('<option value="No aplica">No aplica</option>');
+   $('#field-departamento').append('<option value="No aplica">No aplica</option>');
    $('#field-Fuente_idFuente').append('<option value="0">Otra</option>');
 
 /*/############# TUTORIAS ########################
@@ -168,7 +170,7 @@ $(document).ready(function()
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand">Sistema de Información Academica: <b>Producción</b></a>
+          <a class="brand">Sistema de Información Académica: <b>Producción</b></a>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> <?php

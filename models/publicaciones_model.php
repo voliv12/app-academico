@@ -35,10 +35,11 @@ class Publicaciones_model extends CI_Model
         $this->db->from('articulo_academico');
         $this->db->join('articulo','articulo.idArticulo = articulo_academico.idArticulo');
         $this->db->join('academico','academico.noPersonal = articulo_academico.noPersonal');
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
         $where = "articulo.fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
         $this->db->where($where);
         $this->db->where('articulo.tipo',$tipo);
-        $this->db->where('academico.departamento', $depto);
+        $this->db->where('departamento.nombre_depto', $depto);
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -126,15 +127,11 @@ class Publicaciones_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    /*function ponencia_academico($idPonencia)
+    function consultar_departamento($depto)
     {
-        $this->db->select('academico.nombre');
-        $this->db->from('academico');
-        $this->db->join('ponencia_academico', 'ponencia_academico.noPersonal = academico.noPersonal');
-        $this->db->where('ponencia_academico.idPonencia', $idPonencia);
-        //$this->db->where('academico.noPersonal', $noPersonal);
-        //$this->db->order_by('ponencia.fecha', 'DESC');
+        $this->db->select('nombre_depto');
+        $this->db->from('departamento');
         $query = $this->db->get();
-        return $query->result();
-    }  */
+        return $query->result_array();
+     }
 }

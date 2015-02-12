@@ -56,7 +56,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" >Sistema de Información Academica: <b>Módulo de Reportes</b></a>
+          <a class="brand" >Sistema de Información Académica: <b>Reportes</b></a>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <i class="icon-user"></i> <?php
@@ -106,12 +106,12 @@
                     <li class="dropdown-submenu">
                        <a tabindex="-1" href="informe/publicaciones">Publicaciones</a>
                         <ul class="dropdown-menu" align="left">
-                            <li><a href="informe/publicaciones">Por instituto </a></li>
+                            <li><a href="informe/publicaciones">Por dependencia </a></li>
                             <li><a href="informe/departamento/publicaciones">Por departamento </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo publicación </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por Cuerpo Académico </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo de participación </a></li>
-
+                            <li><a href="informe/listar_publicaciones/articulos">Listar Artículos </a></li>
                         </ul>
                    </li>
                     <li><a href="informe/publicaciones/ponencias">Ponencias</a></li>

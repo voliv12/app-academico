@@ -1,3 +1,4 @@
+<div class="alert alert-success"><h4>Grado del Personal Académico</h4></div>
 <script type="text/javascript">
 $(function () {
     $('#container').highcharts({
@@ -29,17 +30,15 @@ $(function () {
             name: 'Total',
             data: [
                     {
-                    name: '<?php echo $doctorado; ?>',
+                    name: 'Doctorado',
                     y: <?php echo $p_d; ?>,
                     sliced: true,
                     selected: true
                     },
-                <?php                     
-                    //echo $doctorado;                
-                    echo $maestria;                    
-                    echo $esp_medica;
-                    echo $licenciatura;
-                ?>                
+                ['Maestría', <?php echo $p_m; ?>],
+                ['Especialidad', <?php echo $p_e; ?>],
+                ['Especialidad Médica', <?php echo $p_em; ?>],
+                ['Licenciatura', <?php echo $p_l; ?>]
             ]
         }]
     });
@@ -48,45 +47,21 @@ $(function () {
 
 <div id="container" style="width: 100%;"></div>
 
-<div style="width:40%;text-align:center;margin-left:30%;margin-top:1%;">
+<div style="width:50%;text-align:center;margin-left:25%;margin-top:1%;">
 <table class="table table-striped">
 <tbody>
     <tr>
         <td>Doctorado:</td>
         <td><?php echo $d; ?></td>
         <td>Maestría:</td>
-        <td><?php echo $m; ?></td>  
+        <td><?php echo $m; ?></td>
+        <td>Especialidad:</td>
+        <td><?php echo $e; ?></td>
         <td>Especialidad Médica:</td>
         <td><?php echo $em; ?></td>
         <td>Licenciatura:</td>
         <td><?php echo $l; ?></td>
-        </tr>    
-</tbody>
-</table>                    
-</div>
-
-<div style="width:70%;text-align:center;margin-left:15%;margin-top:2%;">
-<table class="table table-striped">
-<thead>
-  <tr>
-    <th>#</th>
-    <th>Nombre del Académico</th>
-    <th>Grado</th>    
-  </tr>
-</thead>
-<tbody>
-   <?php
-        $i = 0;
-        foreach ($listado as $row){
-            $i = $i + 1;
-            echo "<tr>";
-            echo "<td>".$i."</td>";
-            echo "<td>".$row['nombre']."</td>";
-            echo "<td>".$row['grado']."</td>";
-            
-            echo "</tr>";
-        }    
-   ?>           
+        </tr>
 </tbody>
 </table>
 </div>
