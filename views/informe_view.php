@@ -106,7 +106,7 @@
                     <li class="dropdown-submenu">
                        <a tabindex="-1" href="informe/publicaciones">Publicaciones</a>
                         <ul class="dropdown-menu" align="left">
-                            <li><a href="informe/publicaciones">Por dependencia </a></li>
+                            <li><a href="informe/dependencia">Por dependencia </a></li>
                             <li><a href="informe/departamento/publicaciones">Por departamento </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo publicación </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por Cuerpo Académico </a></li>
@@ -114,7 +114,7 @@
                             <li><a href="informe/listar_publicaciones/articulos">Listar Artículos </a></li>
                         </ul>
                    </li>
-                    <li><a href="informe/publicaciones/ponencias">Ponencias</a></li>
+                    <li><a href="informe/ponencias/listar_ponencias">Ponencias</a></li>
                 </ul>
               </div>
               <div class="btn-group">
