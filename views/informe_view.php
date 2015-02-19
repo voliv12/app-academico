@@ -112,6 +112,7 @@
                             <li><a href="informe/tipo_publicacion/tipo">Por Cuerpo Académico </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo de participación </a></li>
                             <li><a href="informe/listar_publicaciones/articulos">Listar Artículos </a></li>
+                            <li><a href="informe/listar_publicaciones/articulos_departamento">Listar Artículos Departamento </a></li>
                         </ul>
                    </li>
                     <li><a href="informe/ponencias/listar_ponencias">Ponencias</a></li>
@@ -119,7 +120,7 @@
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Docencia <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">                   
+                <ul class="dropdown-menu" align="left">
                     <li><a href="informe/docencia/catedra"><i class="icon-hand-up"></i> Cátedra </a></li>
                     <li><a href="informe/docencia/tesis"><i class="icon-screenshot"></i> Dirección de tesis </a></li>
                     <li><a href="informe/docencia/tutorias_sit"><i class="icon-check"></i> Tutorías </a></li>
