@@ -121,27 +121,27 @@
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Docencia <span class="caret"></span></button>
                 <ul class="dropdown-menu" align="left">
-                    <li><a href="informe/docencia/catedra"><i class="icon-hand-up"></i> Cátedra </a></li>
-                    <li><a href="informe/docencia/tesis"><i class="icon-screenshot"></i> Dirección de tesis </a></li>
-                    <li><a href="informe/docencia/tutorias_sit"><i class="icon-check"></i> Tutorías </a></li>
-                    <li><a href="informe/docencia/servicio"><i class="icon-check"></i> Servicio Social </a></li>
+                    <li><a href="informe/docencia/catedra"> Cátedra </a></li>
+                    <li><a href="informe/docencia/tesis"> Dirección de tesis </a></li>
+                    <li><a href="informe/docencia/tutorias_sit"> Tutorías </a></li>
+                    <li><a href="informe/docencia/servicio"> Servicio Social </a></li>
                 </ul>
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Investigación <span class="caret"></span></button>
                 <ul class="dropdown-menu" align="left">
-                   <li><a href="informe/investigacion/proyectos"><i class="icon-briefcase"></i> Proyectos</a></li>
-                   <li><a href="informe/investigacion/cuerpos"><i class="icon-thumbs-up"></i> Cuerpos Académicos</a></li>
-                   <li><a href="informe/investigacion/financiamiento"><i class="icon-tag"></i> Financiamiento</a></li>
-                   <li><a href="informe/investigacion/donaciones"><i class="icon-inbox"></i> Donaciones</a></li>
+                   <li><a href="informe/investigacion/proyectos"> Proyectos</a></li>
+                   <li><a href="informe/investigacion/cuerpos"> Cuerpos Académicos</a></li>
+                   <li><a href="informe/investigacion/financiamiento"> Financiamiento</a></li>
+                   <li><a href="informe/investigacion/donaciones"> Donaciones</a></li>
                 </ul>
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Institucional <span class="caret"></span></button>
                 <ul class="dropdown-menu" align="left">
-                   <li><a href="informe/Institucional/alianzas"><i class="icon-random"></i> Vínculación</a></li>
-                   <li><a href="informe/Institucional/reconocimientos"><i class="icon-certificate"></i> Reconocimientos</a></li>
-                   <li><a href="informe/Institucional/eventos"><i class="icon-calendar"></i> Eventos académicos organizados</a></li>
+                   <li><a href="informe/Institucional/alianzas"> Vínculación</a></li>
+                   <li><a href="informe/Institucional/reconocimientos"> Reconocimientos</a></li>
+                   <li><a href="informe/Institucional/eventos"> Eventos académicos organizados</a></li>
                  </ul>
               </div>
             </div>
