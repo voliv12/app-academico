@@ -8,14 +8,13 @@ class Publicaciones_model extends CI_Model
         $this->load->database();
     }
 
-    function listar_publicaciones($tabla, $fecha_de, $fecha_hasta)
+    function total_publicaciones($tabla, $fecha_de, $fecha_hasta)
     {
         $this->db->select('*');
         $this->db->from($tabla);
         $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
         $this->db->where($where);
-        $query = $this->db->get();
-        return $query->result();
+        return $this->db->count_all_results();
     }
 
     function contar_publicaciones($tabla, $fecha_de, $fecha_hasta, $tipo)
@@ -25,6 +24,37 @@ class Publicaciones_model extends CI_Model
         $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
         $this->db->where($where);
         $this->db->where('tipo',$tipo);
+        return $this->db->count_all_results();
+    }
+
+    function tipo_participacion($tabla, $fecha_de, $fecha_hasta, $tipo_autor)
+    {
+        $this->db->select('*');
+        $this->db->from($tabla);
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where($tipo_autor." <>", 0);
+        return $this->db->count_all_results();
+    }
+
+    function tipo_participacion_col($tabla, $fecha_de, $fecha_hasta) //como colaborador
+    {
+        $this->db->select('*');
+        $this->db->from($tabla);
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where("autor_principal =", 0);
+        $this->db->where("autor_correspondencia =", 0);
+        return $this->db->count_all_results();
+    }
+
+    function tipo_participacion_col_cap($tabla, $fecha_de, $fecha_hasta) //como colaborador
+    {
+        $this->db->select('*');
+        $this->db->from($tabla);
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where("autor_principal =", 0);
         return $this->db->count_all_results();
     }
 
