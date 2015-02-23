@@ -62,7 +62,7 @@ Class Investigacion extends CI_controller{
                 $crud->order_by('fecha_donacion','Desc');
                 $crud->set_relation('Academico_noPersonal','academico','nombre');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
-                $crud->columns('destino','tipo','donante','monto','cantidad','descripcion');
+                $crud->columns('destino','tipo','donante','monto','cantidad');
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Donaciones</h4></div>';
                 $this->_example_output($output);
