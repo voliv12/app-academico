@@ -80,7 +80,7 @@ $(function () {
 <script type="text/javascript">
 $(function () {
         var colors = Highcharts.getOptions().colors,
-            categories = ['Autor principal', 'Autor de correspondencia','Colaborador'],
+            categories = ['Autor principal','Colaborador'],
             name = 'Tipo participación',
             data = [{
                     y: <?php echo $p_cap_ap; ?>,
