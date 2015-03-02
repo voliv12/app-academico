@@ -34,7 +34,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation('autor_correspondencia','academico','nombre');
             $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
-            $crud->columns('fecha','titulo','autor','autor_principal','autor_correspondencia','nombre_revista','estatus','cuerpo_academico');
+            $crud->columns('fecha','titulo','autor','autor_principal','autor_correspondencia','nombre_revista','estatus','cuerpo_academico','tipo');
             $crud->display_as('autor','Autor(es)');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('estatus','DESC');

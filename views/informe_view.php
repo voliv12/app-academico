@@ -127,15 +127,20 @@
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Divulgación <span class="caret"></span></button>
                 <ul class="dropdown-menu" align="left">
                     <li class="dropdown-submenu">
-                       <a tabindex="-1" href="informe/publicaciones">Publicaciones</a>
+                       <a tabindex="-1" href="informe/publicaciones">Indicador publicaciones</a>
                         <ul class="dropdown-menu" align="left">
                             <li><a href="informe/dependencia">Por dependencia </a></li>
-                            <li><a href="informe/departamento/publicaciones">Por departamento </a></li>
+                            <li><a href="informe/departamento">Por departamento </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo publicación </a></li>
-                            <li><a href="informe/tipo_publicacion/tipo">Por Cuerpo Académico </a></li>
+                            <li><a href="informe/cuerpo_academico">Por Cuerpo Académico </a></li>
                             <li><a href="informe/tipo_participacion/tipo">Por tipo de participación </a></li>
-                            <li><a href="informe/listar_publicaciones/articulos">Listar Artículos </a></li>
-                            <li><a href="informe/listar_publicaciones/articulos_departamento">Listar Artículos Departamento </a></li>
+                        </ul>
+                   </li>
+                   <li class="dropdown-submenu">
+                       <a tabindex="-1" href="informe/publicaciones">Listado publicaciones</a>
+                        <ul class="dropdown-menu" align="left">
+                            <li><a href="informe/listar_publicaciones/articulos">Artículos </a></li>
+                            <li><a href="informe/listar_publicaciones/articulos_departamento">Artículos por Departamento </a></li>
                         </ul>
                    </li>
                     <li><a href="informe/ponencias/listar_ponencias">Ponencias</a></li>

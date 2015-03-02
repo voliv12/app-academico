@@ -48,7 +48,7 @@ class Publicaciones_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function tipo_participacion_col_cap($tabla, $fecha_de, $fecha_hasta) //como colaborador
+    function tipo_participacion_col_cap($tabla, $fecha_de, $fecha_hasta) //como colaborador en capitulos
     {
         $this->db->select('*');
         $this->db->from($tabla);
@@ -56,6 +56,36 @@ class Publicaciones_model extends CI_Model
         $this->db->where($where);
         $this->db->where("autor_principal =", 0);
         return $this->db->count_all_results();
+    }
+
+    function cuerpo_academico($tabla, $fecha_de, $fecha_hasta) //por cuerpo academico
+    {
+        $this->db->select('nombre_CA, count( * ) AS total, count( * ) *100 / (SELECT count( * ) FROM '.$tabla.' ) AS porcentaje');
+        $this->db->from($tabla);
+        $this->db->join('cuerpo',$tabla.'.cuerpo_academico = cuerpo.idCuerpo');
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where("cuerpo_academico IS NOT NULL");
+        $this->db->where("cuerpo_academico <>", '');
+        $this->db->group_by('cuerpo_academico');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    function produccion_departamento($tabla1,$tabla2,$id_tabla,$fecha_de,$fecha_hasta,$tipo,$total,$porcentaje) //producción por departamento
+    {
+        $select = 'nombre_depto, count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) AS '.$total.', count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) *100 / ( SELECT count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) FROM '.$tabla1.' ) AS '.$porcentaje.'';
+        $this->db->select($select);
+        $this->db->from($tabla1);
+        $this->db->join($tabla2, $tabla2.'.'.$id_tabla.' = '.$tabla1.'.'.$id_tabla.'');
+        $this->db->join('academico',$tabla1.'.noPersonal = academico.noPersonal');
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where($tabla2.'.tipo',$tipo);
+        $this->db->group_by('nombre_depto');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     function articulos_departamento($depto, $fecha_de, $fecha_hasta, $tipo)
@@ -81,10 +111,11 @@ class Publicaciones_model extends CI_Model
         $this->db->from('libro_academico');
         $this->db->join('libro','libro.idLibro = libro_academico.idLibro');
         $this->db->join('academico','academico.noPersonal = libro_academico.noPersonal');
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
         $where = "libro.fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
         $this->db->where($where);
         $this->db->where('libro.tipo',$tipo);
-        $this->db->where('academico.departamento', $depto);
+        $this->db->where('departamento.nombre_depto', $depto);
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -96,10 +127,11 @@ class Publicaciones_model extends CI_Model
         $this->db->from('capitulo_academico');
         $this->db->join('capitulo','capitulo.idCapitulo = capitulo_academico.idCapitulo');
         $this->db->join('academico','academico.noPersonal = capitulo_academico.noPersonal');
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
         $where = "capitulo.fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
         $this->db->where($where);
         $this->db->where('capitulo.tipo',$tipo);
-        $this->db->where('academico.departamento', $depto);
+        $this->db->where('departamento.nombre_depto', $depto);
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -157,10 +189,11 @@ class Publicaciones_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function consultar_departamento($depto)
+    function lista_departamentos()
     {
         $this->db->select('nombre_depto');
         $this->db->from('departamento');
+        $this->db->order_by('nombre_depto', 'ASC');
         $query = $this->db->get();
         return $query->result_array();
      }
