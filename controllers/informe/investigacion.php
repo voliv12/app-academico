@@ -43,7 +43,7 @@ Class Investigacion extends CI_controller{
             }else
             {
                 redirect('login');
-            } 
+            }
         }
 
 
@@ -88,7 +88,7 @@ Class Investigacion extends CI_controller{
                 $crud->set_relation('Proyecto_idProyecto','proyecto','Titulo');
                 $crud->set_relation('Cuerpo_idCuerpo','cuerpo','nombre_CA');
                 $crud->set_relation('Posgrado_idPosgrado','posgrado','nombre_posgrado');
-                $crud->columns('Destino','Fuente_idFuente','Otra_fuente','Monto');
+                $crud->columns('Academico_noPersonal','Destino','Fuente_idFuente','Otra_fuente','Monto');
                 $crud->order_by('Estado','Asc');
                 $crud->unset_print();
                 $crud->unset_add();
@@ -122,7 +122,7 @@ Class Investigacion extends CI_controller{
                 $crud->unset_add();
                 $crud->unset_edit();
                 $crud->unset_delete();
-                
+
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Proyectos</h4></div>';
                 $this->_example_output($output);
