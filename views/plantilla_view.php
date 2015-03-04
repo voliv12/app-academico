@@ -194,7 +194,6 @@ $(document).ready(function()
               <?php } ?>
               <?php if ($this->session->userdata('administrar_usuarios') == "Si") { ?>
               <li><a href="usuarios/academico"><i class="icon-plus-sign"></i> Administrar usuarios</a></li>
-              <!--li><a href="catalogos"><i class="icon-th-list"></i> Catálogos</a></li-->
                 <div class="btn-group pull-right">
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                   <i class="icon-th-list"></i> Catálogos <span class="caret"></span>
@@ -208,6 +207,7 @@ $(document).ready(function()
                   <li><a href="catalogos/fuentes"></i> Fuentes de financiamiento</a></li>
                 </ul>
               </div>
+              <li><a href="respaldo_bd"><img src="imagenes/database_save.png" title="Respaldar Base de Datos"></i></a></li>
               <?php } ?>
             </ul>
           </div><!--/.nav-collapse -->
