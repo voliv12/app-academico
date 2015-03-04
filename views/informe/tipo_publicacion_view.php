@@ -25,7 +25,7 @@ $(function () {
                 type: 'column'
             },
             title: {
-                text: 'Total de Artículos por Tipo'
+                text: 'Total de Artículos por Tipo de publicación'
             },
             subtitle: {
                 text: 'Periodo: <?php echo $desde." - ".$hasta; ?> '
@@ -92,7 +92,7 @@ $(function () {
                 type: 'column'
             },
             title: {
-                text: 'Total de Libros por Tipo'
+                text: 'Total de Libros por Tipo de publicación'
             },
             subtitle: {
                 text: 'Periodo: <?php echo $desde." - ".$hasta; ?> '
@@ -159,7 +159,7 @@ $(function () {
                 type: 'column'
             },
             title: {
-                text: 'Total de Capítulos de Libro por Tipo'
+                text: 'Total de Capítulos de Libro por Tipo de publicación'
             },
             subtitle: {
                 text: 'Periodo: <?php echo $desde." - ".$hasta; ?> '

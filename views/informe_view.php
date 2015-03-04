@@ -141,6 +141,17 @@
                         <ul class="dropdown-menu" align="left">
                             <li><a href="informe/listar_publicaciones/articulos">Artículos </a></li>
                             <li><a href="informe/listar_publicaciones/articulos_departamento">Artículos por Departamento </a></li>
+                            <li><a href="informe/listar_publicaciones/libros">Libros</a></li>
+                            <li><a href="informe/listar_publicaciones/libros_departamento">Libros por Departamento</a></li>
+                            <li><a href="informe/listar_publicaciones/capitulos">Capítulos</a></li>
+                            <li><a href="informe/listar_publicaciones/capitulos_departamento">Capítulos por Departamento</a></li>
+                        </ul>
+                   </li>
+                   <li class="dropdown-submenu">
+                       <a tabindex="-1" href="informe/publicaciones">Colaboración Departamentos</a>
+                        <ul class="dropdown-menu" align="left">
+                            <li><a href="informe/listar_publicaciones/articulos_colaboracion">Artículos</a></li>
+                            <li><a href="informe/listar_publicaciones/capitulos_colaboracion">Capítulos</a></li>
                         </ul>
                    </li>
                     <li><a href="informe/ponencias/listar_ponencias">Ponencias</a></li>

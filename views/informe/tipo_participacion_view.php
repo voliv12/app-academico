@@ -174,31 +174,28 @@ $(function () {
         </div>
     </div>
 
-
-<div id="tabs-2">
-<div class="row">
-    <div id="capitulos" style="width:77%;height:59%"></div>
-</div>
-    <div style="width:70%;text-align:center;margin-left:15%;margin-top:1%">
-    <table class="table table-hover">
-      <tr>
-          <h4>Capítulos<h4>
-      </tr>
-      <tr>
-       <td>Autor principal</td>
-        <td>Colaborador</td>
-        <td><b>Total de capítulos</b></td>
-      </tr>
-      <tr>
-        <td><?php echo $cap_ap; ?></td>
-        <td><?php echo $cap_co; ?></td>
-        <td><b><?php echo $total_cap; ?></b></td>
-      </tr>
-    </table>
+    <div id="tabs-2">
+        <div class="row">
+            <div id="capitulos" style="width:77%;height:59%"></div>
+        </div>
+        <div style="width:70%;text-align:center;margin-left:15%;margin-top:1%">
+            <table class="table table-hover">
+              <tr>
+                  <h4>Capítulos<h4>
+              </tr>
+              <tr>
+               <td>Autor principal</td>
+                <td>Colaborador</td>
+                <td><b>Total de capítulos</b></td>
+              </tr>
+              <tr>
+                <td><?php echo $cap_ap; ?></td>
+                <td><?php echo $cap_co; ?></td>
+                <td><b><?php echo $total_cap; ?></b></td>
+              </tr>
+            </table>
+        </div>
     </div>
-</div>
-
-
 
 </div>
 </p><br/>

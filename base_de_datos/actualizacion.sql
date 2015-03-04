@@ -143,3 +143,5 @@ CREATE TABLE  `informacion_academica`.`tutoria_sit` (
 `vigente` BOOL NOT NULL ,
 PRIMARY KEY (  `idTutoria_sit` )
 ) ENGINE = MYISAM ;
+
+

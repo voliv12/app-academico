@@ -30,6 +30,7 @@ Class Dependencia extends CI_controller{
             $datos_plantilla['titulo'] = "Informe";
             $datos_plantilla['contenido'] = $this->load->view('informe/publicaciones_view',$datos,TRUE);
             $this->load->view('informe_view', $datos_plantilla);
+
         }
     }
 
@@ -98,7 +99,6 @@ Class Dependencia extends CI_controller{
         $datos_plantilla['titulo'] = "Total de publicaciones";
         $datos_plantilla['contenido'] = $this->load->view('informe/publicaciones_view',$lista,TRUE);
         $this->load->view('informe_view', $datos_plantilla);
-
     }
 }
 
