@@ -108,7 +108,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation('autor_principal','academico','nombre');
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
             $crud->columns('idArticulo','nombre_depto','titulo','autor','autor_principal','participantes','fecha');
-            //$crud->display_as('autor','Autor(es) como aparecen en la publicación');
+            $crud->display_as('autor','Autor(es) como aparecen en la publicación');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
 
             $output = $crud->render();
