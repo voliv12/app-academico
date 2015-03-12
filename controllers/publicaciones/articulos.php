@@ -55,8 +55,11 @@ Class Articulos extends CI_controller{
                 $crud->display_as('participantes','Participantes internos')->display_as('total_autores','Total de autores')->display_as('autor','Autor(es) como aparecen en la publicación')->display_as('autor_principal_ex','Autor principal externo')->display_as('autor_correspondencia_ex','Autor correspondencia externo');
                 $crud->field_type('total_autores','dropdown',range(1, 20));
                 $crud->field_type('posicion','dropdown',range(1, 20));
+                $crud->field_type('autocitas','dropdown',range(1, 50));
+                $crud->field_type('citas_externas','dropdown',range(1, 50));
                 $crud->unset_texteditor('autor','full_text');
                 $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
+                $crud->set_relation('indizada_en','bases_index','nombre_base');
                 $crud->set_rules('direccion_web','Dirección web','valid_url');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_rules('documento','Documento','max_length[26]');

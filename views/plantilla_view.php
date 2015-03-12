@@ -48,6 +48,9 @@ $(document).ready(function()
    $('#field-categoria').append('<option value="No aplica">No aplica</option>');
    $('#field-departamento').append('<option value="No aplica">No aplica</option>');
    $('#field-Fuente_idFuente').append('<option value="0">Otra</option>');
+   //('#field-autocitas').attr('title','ASDFADFFADF afdfafd');
+
+
 
 /*/############# TUTORIAS ########################
     //ocultar y mostrar el campo de fecha de término en Tutorias

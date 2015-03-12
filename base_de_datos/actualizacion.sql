@@ -144,4 +144,17 @@ CREATE TABLE  `informacion_academica`.`tutoria_sit` (
 PRIMARY KEY (  `idTutoria_sit` )
 ) ENGINE = MYISAM ;
 
+#############PARA LAS CITAS AGREGAR  ######################33
+ALTER TABLE  `articulo` ADD  `autocitas` INT NULL AFTER  `indizada_en` ,
+ADD  `citas_externas` INT NULL AFTER  `autocitas`
+
+#############exportar tabala ######################33
+CREATE TABLE  `informacion_academica`.`bases_index` (
+`idBases_index` INT NOT NULL AUTO_INCREMENT ,
+`nombre_base` VARCHAR( 50 ) NOT NULL ,
+PRIMARY KEY (  `idBases_index` )
+) ENGINE = MYISAM ;
+
+##AGREGAR el campo periodo a tablas  y tutoria_sit
+ALTER TABLE  `tutoria_sit` ADD  `periodo` VARCHAR ( 100 )  NULL AFTER  `total_alumnos`
 
