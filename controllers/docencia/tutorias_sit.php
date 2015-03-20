@@ -54,7 +54,7 @@ Class Tutorias_sit extends CI_controller{
                                                             '202051' => 'Febrero - Julio 2020'
                                                             ));
                 $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->set_rules('reporte_SIT','Reporte del SIT','required|max_length[26]');
+                $crud->set_rules('reporte_SIT','Reporte del SIT','max_length[26]');
                 $crud->order_by('vigente','Asc');
                 $crud->display_as('reporte_SIT','Reporte del SIT');
 
