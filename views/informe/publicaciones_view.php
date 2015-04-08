@@ -1,34 +1,34 @@
 <script type="text/javascript">
-$(function () {                  
+$(function () {
         var colors = Highcharts.getOptions().colors,
-            categories = ['Artículos Nacionales', 'Artículos Internacionales', 'Libros Nacionales', 'Libros Internacionales', 'Capítulos Nacionales','Capítulos Internacionales'],            
+            categories = ['Artículos Nacionales', 'Artículos Internacionales', 'Libros Nacionales', 'Libros Internacionales', 'Capítulos Nacionales','Capítulos Internacionales'],
             name = 'Tipo de publicación',
             data = [{
-                    y: <?php echo $p_art_nac; ?>,                    
-                    color: colors[0]                   
+                    y: <?php echo $p_art_nac; ?>,
+                    color: colors[0]
                 }, {
                     y: <?php echo $p_art_int; ?>,
-                    color: colors[1]                
+                    color: colors[1]
                 }, {
                     y: <?php echo $p_lib_nac; ?>,
-                    color: colors[2]                    
+                    color: colors[2]
                 }, {
                     y: <?php echo $p_lib_int; ?>,
-                    color: colors[3]                  
+                    color: colors[3]
                 }, {
                     y: <?php echo $p_cap_nac; ?>,
-                    color: colors[4]                   
+                    color: colors[4]
                 },{
                     y: <?php echo $p_cap_int; ?>,
                     color: colors[5]
-                }];            
-    
+                }];
+
         var chart = $('#container').highcharts({
             chart: {
                 type: 'column'
             },
             title: {
-                text: 'Total de Publicaciones por el ICS '
+                text: 'Total de Publicaciones por Dependencia '
             },
             subtitle: {
                 text: 'Periodo: <?php echo $desde." - ".$hasta; ?> '
@@ -43,7 +43,7 @@ $(function () {
             },
             plotOptions: {
                 column: {
-                    cursor: 'pointer',                    
+                    cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
                         color: colors[0],
@@ -59,7 +59,7 @@ $(function () {
             tooltip: {
                 formatter: function() {
                     var point = this.point,
-                        s = this.x +':<b>'+ this.y +'% </b><br/>';                   
+                        s = this.x +':<b>'+ this.y +'% </b><br/>';
                     return s;
                 }
             },
@@ -74,8 +74,8 @@ $(function () {
         })
         .highcharts(); // return chart
     });
-    
-</script>    
+
+</script>
 
 <?php echo $form_fechas; ?>
 
