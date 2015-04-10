@@ -21,6 +21,10 @@ Class Departamento_individual extends CI_controller{
 
         $this->load->model('publicaciones_model');
         $this->load->model('usuarios_model');
+        $total_art = $this->publicaciones_model->total_publicaciones('articulo',$fecha_de,$fecha_hasta);
+        $total_lib = $this->publicaciones_model->total_publicaciones('libro',$fecha_de,$fecha_hasta);
+        $total_cap = $this->publicaciones_model->total_publicaciones('capitulo',$fecha_de,$fecha_hasta);
+
         //*******BIOMEDICINA
         $art_nac = $this->publicaciones_model->articulos_departamento('Biomedicina',$fecha_de, $fecha_hasta, "Nacional");
         $art_int = $this->publicaciones_model->articulos_departamento('Biomedicina',$fecha_de, $fecha_hasta, "Internacional");
@@ -56,7 +60,7 @@ Class Departamento_individual extends CI_controller{
         $invest_ss = $this->usuarios_model->contar_por_depto('Sistemas de Salud');
         $invest_ad = $this->usuarios_model->contar_por_depto('Adicciones');
 
-        $total = $art_nac + $art_int + $lib_nac + $lib_int + $cap_nac + $cap_int; //Total de publicaciones de biomedicina
+       // $total = $art_nac + $art_int + $lib_nac + $lib_int + $cap_nac + $cap_int; //Total de publicaciones de biomedicina
         $p_art_nac = 0;
         $p_art_int = 0;
         $p_lib_nac = 0;
@@ -64,7 +68,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac = 0;
         $p_cap_int = 0;
 
-        $total_cl = $art_nac_cl + $art_int_cl + $lib_nac_cl + $lib_int_cl + $cap_nac_cl + $cap_int_cl; //Total de publicaciones Clínica
+       // $total_cl = $art_nac_cl + $art_int_cl + $lib_nac_cl + $lib_int_cl + $cap_nac_cl + $cap_int_cl; //Total de publicaciones Clínica
         $p_art_nac_cl = 0;
         $p_art_int_cl = 0;
         $p_lib_nac_cl = 0;
@@ -72,7 +76,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac_cl = 0;
         $p_cap_int_cl = 0;
 
-        $total_ss = $art_nac_ss + $art_int_ss + $lib_nac_ss + $lib_int_ss + $cap_nac_ss + $cap_int_ss; //Total de publicaciones Sistemas de Salud
+        //$total_ss = $art_nac_ss + $art_int_ss + $lib_nac_ss + $lib_int_ss + $cap_nac_ss + $cap_int_ss; //Total de publicaciones Sistemas de Salud
         $p_art_nac_ss = 0;
         $p_art_int_ss = 0;
         $p_lib_nac_ss = 0;
@@ -80,7 +84,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac_ss = 0;
         $p_cap_int_ss = 0;
 
-        $total_ad = $art_nac_ad + $art_int_ad + $lib_nac_ad + $lib_int_ad + $cap_nac_ad + $cap_int_ad; //Total de publicaciones de Adicciones
+        //$total_ad = $art_nac_ad + $art_int_ad + $lib_nac_ad + $lib_int_ad + $cap_nac_ad + $cap_int_ad; //Total de publicaciones de Adicciones
         $p_art_nac_ad = 0;
         $p_art_int_ad = 0;
         $p_lib_nac_ad = 0;
@@ -90,82 +94,82 @@ Class Departamento_individual extends CI_controller{
 
         //Saco los porcentajes de Biomedicina
         if($art_nac != 0){
-            $p_art_nac = $art_nac * 100 / $total;
+            $p_art_nac = $art_nac * 100 / $total_art;
         }
         if($art_int != 0){
-             $p_art_int = $art_int * 100 / $total;
+             $p_art_int = $art_int * 100 / $total_art;
         }
         if($lib_nac != 0){
-             $p_lib_nac = $lib_nac * 100 / $total;
+             $p_lib_nac = $lib_nac * 100 / $total_lib;
         }
         if($lib_int != 0){
-            $p_lib_int = $lib_int * 100 / $total;
+            $p_lib_int = $lib_int * 100 / $total_lib;
         }
         if($cap_nac != 0){
-            $p_cap_nac = $cap_nac * 100 / $total;
+            $p_cap_nac = $cap_nac * 100 / $total_cap;
         }
         if($cap_int != 0){
-            $p_cap_int = $cap_int * 100 / $total;
+            $p_cap_int = $cap_int * 100 / $total_cap;
         }
 
         //Saco los porcentajes de Clínica
         if($art_nac_cl != 0){
-            $p_art_nac_cl = $art_nac_cl * 100 / $total_cl;
+            $p_art_nac_cl = $art_nac_cl * 100 / $total_art;
         }
         if($art_int_cl != 0){
-             $p_art_int_cl = $art_int_cl * 100 / $total_cl;
+             $p_art_int_cl = $art_int_cl * 100 / $total_art;
         }
         if($lib_nac_cl != 0){
-             $p_lib_nac_cl = $lib_nac_cl * 100 / $total_cl;
+             $p_lib_nac_cl = $lib_nac_cl * 100 / $total_lib;
         }
         if($lib_int_cl != 0){
-            $p_lib_int_cl = $lib_int_cl * 100 / $total_cl;
+            $p_lib_int_cl = $lib_int_cl * 100 / $total_lib;
         }
         if($cap_nac_cl != 0){
-            $p_cap_nac_cl = $cap_nac_cl * 100 / $total_cl;
+            $p_cap_nac_cl = $cap_nac_cl * 100 / $total_cap;
         }
         if($cap_int_cl != 0){
-            $p_cap_int_cl = $cap_int_cl * 100 / $total_cl;
+            $p_cap_int_cl = $cap_int_cl * 100 / $total_cap;
         }
 
         //Saco los porcentajes de Sistemas de Salud
         if($art_nac_ss != 0){
-            $p_art_nac_ss = $art_nac_ss * 100 / $total_ss;
+            $p_art_nac_ss = $art_nac_ss * 100 / $total_art;
         }
         if($art_int_ss != 0){
-             $p_art_int_ss = $art_int_ss * 100 / $total_ss;
+             $p_art_int_ss = $art_int_ss * 100 / $total_art;
         }
         if($lib_nac_ss != 0){
-             $p_lib_nac_ss = $lib_nac_ss * 100 / $total_ss;
+             $p_lib_nac_ss = $lib_nac_ss * 100 / $total_lib;
         }
         if($lib_int_ss != 0){
-            $p_lib_int_ss = $lib_int_ss * 100 / $total_ss;
+            $p_lib_int_ss = $lib_int_ss * 100 / $total_lib;
         }
         if($cap_nac_ss != 0){
-            $p_cap_nac_ss = $cap_nac_ss * 100 / $total_ss;
+            $p_cap_nac_ss = $cap_nac_ss * 100 / $total_cap;
         }
         if($cap_int_ss != 0){
-            $p_cap_int_ss = $cap_int_ss * 100 / $total_ss;
+            $p_cap_int_ss = $cap_int_ss * 100 / $total_cap;
         }
 
         //Saco los porcentajes de Adicciones
         if($art_nac_ad != 0){
-            $p_art_nac_ad = $art_nac_ad * 100 / $total_ad;
+            $p_art_nac_ad = $art_nac_ad * 100 / $total_art;
         }
         if($art_int_ad != 0){
-             $p_art_int_ad = $art_int_ad * 100 / $total_ad;
+             $p_art_int_ad = $art_int_ad * 100 / $total_art;
         }
         if($lib_nac_ad != 0){
-             $p_lib_nac_ad = $lib_nac_ad * 100 / $total_ad;
+             $p_lib_nac_ad = $lib_nac_ad * 100 / $total_lib;
         }
         if($lib_int_ad != 0){
-            $p_lib_int_ad = $lib_int_ad * 100 / $total_ad;
+            $p_lib_int_ad = $lib_int_ad * 100 / $total_lib;
         }
         if($cap_nac_ad != 0){
-            $p_cap_nac_ad = $cap_nac_ad * 100 / $total_ad;
+            $p_cap_nac_ad = $cap_nac_ad * 100 / $total_cap;
         }
         if($cap_int_ad != 0){
-            $p_cap_int_ad = $cap_int_ad * 100 / $total_ad;
+            $p_cap_int_ad = $cap_int_ad * 100 / $total_cap;
         }
 
         $lista['desde'] = implode("/", array_reverse( preg_split("/\D/", $fecha_de) ) );
