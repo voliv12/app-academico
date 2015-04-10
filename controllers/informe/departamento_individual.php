@@ -188,7 +188,7 @@ Class Departamento_individual extends CI_controller{
         $lista['lib_int'] = $lib_int;
         $lista['cap_nac'] = $cap_nac;
         $lista['cap_int'] = $cap_int;
-        $lista['p_invest'] = round($total / $invest,0); //Divido el total de publicaciones por el total de Investigadores de Biomedicina
+        $lista['p_invest'] = round($total / $invest,2); //Divido el total de publicaciones por el total de Investigadores de Biomedicina
 
         //Mando los porcentajes y totales del área Clínica
         $lista['p_art_nac_cl'] = round($p_art_nac_cl,0);
@@ -203,7 +203,7 @@ Class Departamento_individual extends CI_controller{
         $lista['lib_int_cl'] = $lib_int_cl;
         $lista['cap_nac_cl'] = $cap_nac_cl;
         $lista['cap_int_cl'] = $cap_int_cl;
-        $lista['p_invest_cl'] = round($total_cl / $invest_cl,0); //Divido el total de publicaciones por el total de Investigadores del área Clínica
+        $lista['p_invest_cl'] = round($total_cl / $invest_cl,2); //Divido el total de publicaciones por el total de Investigadores del área Clínica
 
         //Mando los porcentajes y totales de Sistemas de Salud
         $lista['p_art_nac_ss'] = round($p_art_nac_ss,0);
@@ -218,7 +218,7 @@ Class Departamento_individual extends CI_controller{
         $lista['lib_int_ss'] = $lib_int_ss;
         $lista['cap_nac_ss'] = $cap_nac_ss;
         $lista['cap_int_ss'] = $cap_int_ss;
-        $lista['p_invest_ss'] = round($total_ss / $invest_ss,0); //Divido el total de publicaciones por el total de Investigadores de Sistemas de Salud
+        $lista['p_invest_ss'] = round($total_ss / $invest_ss,2); //Divido el total de publicaciones por el total de Investigadores de Sistemas de Salud
 
         //Mando los porcentajes y totales de Adicciones
         $lista['p_art_nac_ad'] = round($p_art_nac_ad,0);
@@ -233,7 +233,7 @@ Class Departamento_individual extends CI_controller{
         $lista['lib_int_ad'] = $lib_int_ad;
         $lista['cap_nac_ad'] = $cap_nac_ad;
         $lista['cap_int_ad'] = $cap_int_ad;
-        $lista['p_invest_ad'] = round($total_ad / $invest_ad,0); //Divido el total de publicaciones por el total de Investigadores de Adicciones
+        $lista['p_invest_ad'] = round($total_ad / $invest_ad,2); //Divido el total de publicaciones por el total de Investigadores de Adicciones
 
 
         $action['action'] = "informe/departamento_individual";
