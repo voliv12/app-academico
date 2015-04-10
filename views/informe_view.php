@@ -130,7 +130,8 @@
                        <a tabindex="-1" href="informe/publicaciones">Indicador publicaciones</a>
                         <ul class="dropdown-menu" align="left">
                             <li><a href="informe/dependencia">Por dependencia </a></li>
-                            <li><a href="informe/departamento">Por departamento </a></li>
+                            <li><a href="informe/departamento">Por departamento (todos) </a></li>
+                            <li><a href="informe/departamento_individual">Por departamento (individual) </a></li>
                             <li><a href="informe/tipo_publicacion/tipo">Por tipo publicación </a></li>
                             <li><a href="informe/cuerpo_academico">Por Cuerpo Académico </a></li>
                             <li><a href="informe/tipo_participacion/tipo">Por tipo de participación </a></li>

@@ -1,5 +1,5 @@
 CREATE VIEW articulo_departamento AS (
-SELECT DISTINCT articulo_academico.idArticulo,departamento.nombre_depto, articulo.titulo, articulo.autor, articulo.autor_principal, articulo.autor_principal_ex, articulo.participantes, articulo.autor_correspondencia, articulo.autor_correspondencia_ex, articulo.fecha
+SELECT DISTINCT articulo_academico.idArticulo,departamento.nombre_depto, articulo.titulo, articulo.nombre_revista, articulo.autor, articulo.autor_principal, articulo.autor_principal_ex, articulo.participantes, articulo.autor_correspondencia, articulo.autor_correspondencia_ex, articulo.fecha
 FROM departamento
 JOIN academico ON academico.departamento = departamento.idDepartamento
 JOIN articulo_academico ON articulo_academico.noPersonal = academico.noPersonal
@@ -35,7 +35,7 @@ ORDER BY libro.idLibro ASC
 #////////////////////////////////////////// capitulos de libro
 
 CREATE VIEW capitulo_departamento AS (
-SELECT DISTINCT capitulo_academico.idCapitulo, departamento.nombre_depto, capitulo.titulo, capitulo.autor, capitulo.autor_principal, capitulo.autor_principal_ex, capitulo.participantes, capitulo.fecha
+SELECT DISTINCT capitulo_academico.idCapitulo, departamento.nombre_depto, capitulo.titulo, capitulo.titulo_libro, capitulo.editorial, capitulo.autor, capitulo.autor_principal, capitulo.autor_principal_ex, capitulo.participantes, capitulo.fecha
 FROM departamento
 JOIN academico ON academico.departamento = departamento.idDepartamento
 JOIN capitulo_academico ON capitulo_academico.noPersonal = academico.noPersonal
