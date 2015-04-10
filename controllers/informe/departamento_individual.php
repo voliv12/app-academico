@@ -60,7 +60,7 @@ Class Departamento_individual extends CI_controller{
         $invest_ss = $this->usuarios_model->contar_por_depto('Sistemas de Salud');
         $invest_ad = $this->usuarios_model->contar_por_depto('Adicciones');
 
-       // $total = $art_nac + $art_int + $lib_nac + $lib_int + $cap_nac + $cap_int; //Total de publicaciones de biomedicina
+        $total = $art_nac + $art_int + $lib_nac + $lib_int + $cap_nac + $cap_int; //Total de publicaciones de biomedicina
         $p_art_nac = 0;
         $p_art_int = 0;
         $p_lib_nac = 0;
@@ -68,7 +68,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac = 0;
         $p_cap_int = 0;
 
-       // $total_cl = $art_nac_cl + $art_int_cl + $lib_nac_cl + $lib_int_cl + $cap_nac_cl + $cap_int_cl; //Total de publicaciones Clínica
+        $total_cl = $art_nac_cl + $art_int_cl + $lib_nac_cl + $lib_int_cl + $cap_nac_cl + $cap_int_cl; //Total de publicaciones Clínica
         $p_art_nac_cl = 0;
         $p_art_int_cl = 0;
         $p_lib_nac_cl = 0;
@@ -76,7 +76,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac_cl = 0;
         $p_cap_int_cl = 0;
 
-        //$total_ss = $art_nac_ss + $art_int_ss + $lib_nac_ss + $lib_int_ss + $cap_nac_ss + $cap_int_ss; //Total de publicaciones Sistemas de Salud
+        $total_ss = $art_nac_ss + $art_int_ss + $lib_nac_ss + $lib_int_ss + $cap_nac_ss + $cap_int_ss; //Total de publicaciones Sistemas de Salud
         $p_art_nac_ss = 0;
         $p_art_int_ss = 0;
         $p_lib_nac_ss = 0;
@@ -84,7 +84,7 @@ Class Departamento_individual extends CI_controller{
         $p_cap_nac_ss = 0;
         $p_cap_int_ss = 0;
 
-        //$total_ad = $art_nac_ad + $art_int_ad + $lib_nac_ad + $lib_int_ad + $cap_nac_ad + $cap_int_ad; //Total de publicaciones de Adicciones
+        $total_ad = $art_nac_ad + $art_int_ad + $lib_nac_ad + $lib_int_ad + $cap_nac_ad + $cap_int_ad; //Total de publicaciones de Adicciones
         $p_art_nac_ad = 0;
         $p_art_int_ad = 0;
         $p_lib_nac_ad = 0;
@@ -176,64 +176,64 @@ Class Departamento_individual extends CI_controller{
         $lista['hasta'] = implode("/", array_reverse( preg_split("/\D/", $fecha_hasta) ) );
 
         //Mando los porcentajes y totales de Biomedicina
-        $lista['p_art_nac'] = round($p_art_nac,2);
-        $lista['p_art_int'] = round($p_art_int,2);
-        $lista['p_lib_nac'] = round($p_lib_nac,2);
-        $lista['p_lib_int'] = round($p_lib_int,2);
-        $lista['p_cap_nac'] = round($p_cap_nac,2);
-        $lista['p_cap_int'] = round($p_cap_int,2);
+        $lista['p_art_nac'] = round($p_art_nac,0);
+        $lista['p_art_int'] = round($p_art_int,0);
+        $lista['p_lib_nac'] = round($p_lib_nac,0);
+        $lista['p_lib_int'] = round($p_lib_int,0);
+        $lista['p_cap_nac'] = round($p_cap_nac,0);
+        $lista['p_cap_int'] = round($p_cap_int,0);
         $lista['art_nac'] = $art_nac;
         $lista['art_int'] = $art_int;
         $lista['lib_nac'] = $lib_nac;
         $lista['lib_int'] = $lib_int;
         $lista['cap_nac'] = $cap_nac;
         $lista['cap_int'] = $cap_int;
-        $lista['p_invest'] = round($total / $invest,2); //Divido el total de publicaciones por el total de Investigadores de Biomedicina
+        $lista['p_invest'] = round($total / $invest,0); //Divido el total de publicaciones por el total de Investigadores de Biomedicina
 
         //Mando los porcentajes y totales del área Clínica
-        $lista['p_art_nac_cl'] = round($p_art_nac_cl,2);
-        $lista['p_art_int_cl'] = round($p_art_int_cl,2);
-        $lista['p_lib_nac_cl'] = round($p_lib_nac_cl,2);
-        $lista['p_lib_int_cl'] = round($p_lib_int_cl,2);
-        $lista['p_cap_nac_cl'] = round($p_cap_nac_cl,2);
-        $lista['p_cap_int_cl'] = round($p_cap_int_cl,2);
+        $lista['p_art_nac_cl'] = round($p_art_nac_cl,0);
+        $lista['p_art_int_cl'] = round($p_art_int_cl,0);
+        $lista['p_lib_nac_cl'] = round($p_lib_nac_cl,0);
+        $lista['p_lib_int_cl'] = round($p_lib_int_cl,0);
+        $lista['p_cap_nac_cl'] = round($p_cap_nac_cl,0);
+        $lista['p_cap_int_cl'] = round($p_cap_int_cl,0);
         $lista['art_nac_cl'] = $art_nac_cl;
         $lista['art_int_cl'] = $art_int_cl;
         $lista['lib_nac_cl'] = $lib_nac_cl;
         $lista['lib_int_cl'] = $lib_int_cl;
         $lista['cap_nac_cl'] = $cap_nac_cl;
         $lista['cap_int_cl'] = $cap_int_cl;
-        $lista['p_invest_cl'] = round($total_cl / $invest_cl,2); //Divido el total de publicaciones por el total de Investigadores del área Clínica
+        $lista['p_invest_cl'] = round($total_cl / $invest_cl,0); //Divido el total de publicaciones por el total de Investigadores del área Clínica
 
         //Mando los porcentajes y totales de Sistemas de Salud
-        $lista['p_art_nac_ss'] = round($p_art_nac_ss,2);
-        $lista['p_art_int_ss'] = round($p_art_int_ss,2);
-        $lista['p_lib_nac_ss'] = round($p_lib_nac_ss,2);
-        $lista['p_lib_int_ss'] = round($p_lib_int_ss,2);
-        $lista['p_cap_nac_ss'] = round($p_cap_nac_ss,2);
-        $lista['p_cap_int_ss'] = round($p_cap_int_ss,2);
+        $lista['p_art_nac_ss'] = round($p_art_nac_ss,0);
+        $lista['p_art_int_ss'] = round($p_art_int_ss,0);
+        $lista['p_lib_nac_ss'] = round($p_lib_nac_ss,0);
+        $lista['p_lib_int_ss'] = round($p_lib_int_ss,0);
+        $lista['p_cap_nac_ss'] = round($p_cap_nac_ss,0);
+        $lista['p_cap_int_ss'] = round($p_cap_int_ss,0);
         $lista['art_nac_ss'] = $art_nac_ss;
         $lista['art_int_ss'] = $art_int_ss;
         $lista['lib_nac_ss'] = $lib_nac_ss;
         $lista['lib_int_ss'] = $lib_int_ss;
         $lista['cap_nac_ss'] = $cap_nac_ss;
         $lista['cap_int_ss'] = $cap_int_ss;
-        $lista['p_invest_ss'] = round($total_ss / $invest_ss,2); //Divido el total de publicaciones por el total de Investigadores de Sistemas de Salud
+        $lista['p_invest_ss'] = round($total_ss / $invest_ss,0); //Divido el total de publicaciones por el total de Investigadores de Sistemas de Salud
 
         //Mando los porcentajes y totales de Adicciones
-        $lista['p_art_nac_ad'] = round($p_art_nac_ad,2);
-        $lista['p_art_int_ad'] = round($p_art_int_ad,2);
-        $lista['p_lib_nac_ad'] = round($p_lib_nac_ad,2);
-        $lista['p_lib_int_ad'] = round($p_lib_int_ad,2);
-        $lista['p_cap_nac_ad'] = round($p_cap_nac_ad,2);
-        $lista['p_cap_int_ad'] = round($p_cap_int_ad,2);
+        $lista['p_art_nac_ad'] = round($p_art_nac_ad,0);
+        $lista['p_art_int_ad'] = round($p_art_int_ad,0);
+        $lista['p_lib_nac_ad'] = round($p_lib_nac_ad,0);
+        $lista['p_lib_int_ad'] = round($p_lib_int_ad,0);
+        $lista['p_cap_nac_ad'] = round($p_cap_nac_ad,0);
+        $lista['p_cap_int_ad'] = round($p_cap_int_ad,0);
         $lista['art_nac_ad'] = $art_nac_ad;
         $lista['art_int_ad'] = $art_int_ad;
         $lista['lib_nac_ad'] = $lib_nac_ad;
         $lista['lib_int_ad'] = $lib_int_ad;
         $lista['cap_nac_ad'] = $cap_nac_ad;
         $lista['cap_int_ad'] = $cap_int_ad;
-        $lista['p_invest_ad'] = round($total_ad / $invest_ad,2); //Divido el total de publicaciones por el total de Investigadores de Adicciones
+        $lista['p_invest_ad'] = round($total_ad / $invest_ad,0); //Divido el total de publicaciones por el total de Investigadores de Adicciones
 
 
         $action['action'] = "informe/departamento_individual";
