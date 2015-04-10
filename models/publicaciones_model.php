@@ -72,9 +72,25 @@ class Publicaciones_model extends CI_Model
         return $query->result_array();
     }
 
+    /*function produccion_departamento($tabla1,$tabla2,$id_tabla,$fecha_de,$fecha_hasta,$tipo,$total,$porcentaje) //producción por departamento
+    {
+        $select = 'nombre_depto, count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) AS '.$total.', count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) *100 / ( SELECT count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) FROM '.$tabla1.'  ) AS '.$porcentaje.'';
+        $this->db->select($select);
+        $this->db->from($tabla1);
+        $this->db->join($tabla2, $tabla2.'.'.$id_tabla.' = '.$tabla1.'.'.$id_tabla.'');
+        $this->db->join('academico',$tabla1.'.noPersonal = academico.noPersonal');
+        $this->db->join('departamento','academico.departamento = departamento.idDepartamento');
+        $where = "fecha BETWEEN '".$fecha_de."' AND '".$fecha_hasta."'";
+        $this->db->where($where);
+        $this->db->where($tabla2.'.tipo',$tipo);
+        $this->db->group_by('nombre_depto');
+        $query = $this->db->get();
+        return $query->result_array();
+    }*/
+
     function produccion_departamento($tabla1,$tabla2,$id_tabla,$fecha_de,$fecha_hasta,$tipo,$total,$porcentaje) //producción por departamento
     {
-        $select = 'nombre_depto, count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) AS '.$total.', count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) *100 / ( SELECT count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) FROM '.$tabla1.' ) AS '.$porcentaje.'';
+        $select = 'nombre_depto, count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) AS '.$total.', count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) *100 / ( SELECT count( DISTINCT ('.$tabla1.'.'.$id_tabla.') ) FROM '.$tabla1.' JOIN '.$tabla2.' ON '.$tabla2.'.'.$id_tabla.'='.$tabla1.'.'.$id_tabla.' WHERE fecha BETWEEN "'.$fecha_de.'" AND "'.$fecha_hasta.'" ) AS '.$porcentaje;
         $this->db->select($select);
         $this->db->from($tabla1);
         $this->db->join($tabla2, $tabla2.'.'.$id_tabla.' = '.$tabla1.'.'.$id_tabla.'');
