@@ -118,17 +118,17 @@
             <div class="container" align="center">
                <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Personal académico <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                     <li><a href="informe/personal_academico/tipo">Tipo</a></li>
                     <li><a href="informe/personal_academico/grado">Grado</a></li>
                 </ul>
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Divulgación <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                     <li class="dropdown-submenu">
                        <a tabindex="-1" href="informe/publicaciones">Indicador publicaciones</a>
-                        <ul class="dropdown-menu" align="left">
+                        <ul class="dropdown-menu" style="text-align: left">
                             <li><a href="informe/dependencia">Por dependencia </a></li>
                             <li><a href="informe/departamento">Por departamento (todos) </a></li>
                             <li><a href="informe/departamento_individual">Por departamento (individual) </a></li>
@@ -139,7 +139,7 @@
                    </li>
                    <li class="dropdown-submenu">
                        <a tabindex="-1" href="informe/publicaciones">Listado publicaciones</a>
-                        <ul class="dropdown-menu" align="left">
+                        <ul class="dropdown-menu" style="text-align: left">
                             <li><a href="informe/listar_publicaciones/articulos">Artículos </a></li>
                             <li><a href="informe/listar_publicaciones/articulos_departamento">Artículos por Departamento </a></li>
                             <li><a href="informe/listar_publicaciones/libros">Libros</a></li>
@@ -150,7 +150,7 @@
                    </li>
                    <li class="dropdown-submenu">
                        <a tabindex="-1" href="informe/publicaciones">Colaboración Departamentos</a>
-                        <ul class="dropdown-menu" align="left">
+                        <ul class="dropdown-menu" style="text-align: left">
                             <li><a href="informe/listar_publicaciones/articulos_colaboracion">Artículos</a></li>
                             <li><a href="informe/listar_publicaciones/capitulos_colaboracion">Capítulos</a></li>
                         </ul>
@@ -160,7 +160,7 @@
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Docencia <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                     <li><a href="informe/docencia/catedra"> Cátedra </a></li>
                     <li><a href="informe/docencia/tesis"> Dirección de tesis </a></li>
                     <li><a href="informe/docencia/tutorias_sit"> Tutorías </a></li>
@@ -169,7 +169,7 @@
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Investigación <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                    <li><a href="informe/investigacion/proyectos"> Proyectos</a></li>
                    <li><a href="informe/investigacion/cuerpos"> Cuerpos Académicos</a></li>
                    <li><a href="informe/investigacion/financiamiento"> Financiamiento</a></li>
@@ -178,7 +178,7 @@
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Institucional <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                    <li><a href="informe/Institucional/alianzas"> Vínculación</a></li>
                    <li><a href="informe/Institucional/reconocimientos"> Reconocimientos</a></li>
                    <li><a href="informe/Institucional/eventos"> Eventos académicos organizados</a></li>

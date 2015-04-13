@@ -271,10 +271,10 @@ $(document).ready(function()
             <div class="container" align="center">
                <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-bullhorn icon-white"></i> Divulgación <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                     <li class="dropdown-submenu">
                        <a tabindex="-1" href="publicaciones/articulos/control"><i class="icon-pencil"></i> Publicaciones</a>
-                        <ul class="dropdown-menu" align="left">
+                        <ul class="dropdown-menu">
                             <li><a href="publicaciones/articulos/control"><i class="icon-list"></i> Artículos</a></li>
                             <li><a href="publicaciones/libros/control"><i class="icon-book"></i> Libros</a></li>
                             <li><a href="publicaciones/capitulos/control"><i class="icon-edit"></i> Capítulos de libro</a></li>
@@ -285,7 +285,7 @@ $(document).ready(function()
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Docencia <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" align="left" style="text-align: left">
                     <li><a href="docencia/catedra/control"><i class="icon-hand-up"></i> Cátedra </a></li>
                     <li><a href="docencia/tesis/control"><i class="icon-screenshot"></i> Dirección de tesis </a></li>
                     <li><a href="docencia/tutorias_sit/control"><i class="icon-check"></i> Tutorías </a></li>
@@ -294,7 +294,7 @@ $(document).ready(function()
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-folder-open icon-white"></i> Investigación <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                    <li><a href="investigacion/proyectos/control"><i class="icon-briefcase"></i> Proyectos</a></li>
                    <li><a href="investigacion/cuerpos/control"><i class="icon-thumbs-up"></i> Cuerpos Académicos</a></li>
                    <li><a href="investigacion/financiamiento/control"><i class="icon-tag"></i> Financiamiento</a></li>
@@ -304,7 +304,7 @@ $(document).ready(function()
               </div>
               <div class="btn-group">
                 <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-flag icon-white"></i> Institucional <span class="caret"></span></button>
-                <ul class="dropdown-menu" align="left">
+                <ul class="dropdown-menu" style="text-align: left">
                    <li><a href="institucional/alianzas/control"><i class="icon-random"></i> Vínculación</a></li>
                    <li><a href="institucional/reconocimientos/control"><i class="icon-certificate"></i> Reconocimientos</a></li>
                    <li><a href="institucional/eventos/control"><i class="icon-calendar"></i> Eventos académicos organizados</a></li>
