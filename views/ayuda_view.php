@@ -13,7 +13,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <img src="assets\ManualUsuario\menu.png">
+        <img src="assets/ManualUsuario/menu.png">
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        <img src="assets\ManualUsuario\art.png">
+        <img src="assets/ManualUsuario/art.png">
       </div>
     </div>
   </div>
@@ -41,21 +41,21 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\art1.png">
+       <img src="assets/ManualUsuario/art1.png">
       </div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsecuatro" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsecuatro" aria-expanded="false" aria-controls="collapsecuatro">
           Libro
         </a>
       </h4>
     </div>
     <div id="collapsecuatro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\libro1.png">
+       <img src="assets/ManualUsuario/libro1.png">
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@
     </div>
     <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\capitulo1.png">
+       <img src="assets/ManualUsuario/capitulo1.png">
       </div>
     </div>
   </div>
@@ -83,7 +83,7 @@
     </div>
     <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\ponencia1.png">
+       <img src="assets/ManualUsuario/ponencia1.png">
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@
     </div>
     <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\catedra1.png">
+       <img src="assets/ManualUsuario/catedra1.png">
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@
     </div>
     <div id="collapseocho" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\tesis1.png">
+       <img src="assets/ManualUsuario/tesis1.png">
       </div>
     </div>
   </div>
@@ -125,7 +125,7 @@
     </div>
     <div id="collapsenueve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\tutorias1.png">
+       <img src="assets/ManualUsuario/tutorias1.png">
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@
     </div>
     <div id="collapsediez" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\servicio1.png">
+       <img src="assets/ManualUsuario/servicio1.png">
       </div>
     </div>
   </div>
@@ -153,7 +153,7 @@
     </div>
     <div id="collapseonce" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\proyec1.png">
+       <img src="assets/ManualUsuario/proyec1.png">
       </div>
     </div>
   </div>
@@ -167,7 +167,7 @@
     </div>
     <div id="collapsedoce" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\cuerpos1.png">
+       <img src="assets/ManualUsuario/cuerpos1.png">
       </div>
     </div>
   </div>
@@ -181,7 +181,7 @@
     </div>
     <div id="collapsetrece" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\finan1.png">
+       <img src="assets/ManualUsuario/finan1.png">
       </div>
     </div>
   </div>
@@ -195,7 +195,7 @@
     </div>
     <div id="collapsecatorce" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\donaciones1.png">
+       <img src="assets/ManualUsuario/donaciones1.png">
       </div>
     </div>
   </div>
@@ -209,7 +209,7 @@
     </div>
     <div id="collapsequince" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\vincula1.png">
+       <img src="assets/ManualUsuario/vincula1.png">
       </div>
     </div>
   </div>
@@ -223,7 +223,7 @@
     </div>
     <div id="collapsedieciseis" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\reconocimiento.png">
+       <img src="assets/ManualUsuario/reconocimiento.png">
       </div>
     </div>
   </div>
@@ -237,7 +237,7 @@
     </div>
     <div id="collapsediecisiete" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-       <img src="assets\ManualUsuario\event1.png">
+       <img src="assets/ManualUsuario/event1.png">
       </div>
     </div>
   </div>
