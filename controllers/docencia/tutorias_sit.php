@@ -29,8 +29,8 @@ Class Tutorias_sit extends CI_controller{
 
                 $crud->where('Academico_noPersonal',$this->noPersonal);
                 $crud->set_table('tutoria_sit');
-                $crud->unset_columns('Academico_noPersonal');
-                $crud->unset_fields('vigente');
+                $crud->unset_columns('Academico_noPersonal','vigente');
+                //$crud->unset_fields('vigente');
                 $crud->set_subject('Tutoria');
                 $crud->required_fields('nivel','total_alumnos','periodo');
                 $crud->set_relation('facultad','facultad','nombre_facultad');

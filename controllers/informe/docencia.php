@@ -1,6 +1,6 @@
 <?php
 Class Docencia extends CI_controller{
-        
+
         function __construct()
         {
             parent::__construct();
@@ -8,9 +8,9 @@ Class Docencia extends CI_controller{
             /* Standard Libraries */
             $this->load->database();
             $this->load->helper('form','url');
-            $this->load->library('form_validation'); 
+            $this->load->library('form_validation');
             $this->load->library('grocery_CRUD');
-            /* ------------------ */                  
+            /* ------------------ */
             $this->noPersonal = $this->session->userdata('noPersonal');
         }
 
@@ -81,12 +81,12 @@ Class Docencia extends CI_controller{
             {
                 $crud = new grocery_CRUD();
 
-                
+
                 $crud->set_table('tesis');
                 $crud->set_subject('Tesis');
                 $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
                 $crud->set_relation('Academico_noPersonal','academico','nombre');
-                $crud->display_as('Academico_noPersonal','Nombre de Académico');                
+                $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_presentacion','Desc');
                 $crud->unset_print();
@@ -95,7 +95,7 @@ Class Docencia extends CI_controller{
                 $crud->unset_edit();
                 $crud->unset_delete();
 
-            
+
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Dirección de tesis</h4></div>';
                 $this->_example_output($output);
@@ -106,24 +106,22 @@ Class Docencia extends CI_controller{
         }
 
 
-
-
-
          function tutorias_sit()
         {
              if ($this->session->userdata('logged_in') == TRUE)
             {
                 $crud = new grocery_CRUD();
 
-               
+
                 $crud->set_table('tutoria_sit');
                 $crud->set_subject('Tutoria');
                 $crud->set_relation('facultad','facultad','nombre_facultad');
                 $crud->set_relation('posgrado','posgrado','nombre_posgrado');
                 $crud->set_relation('Academico_noPersonal','academico','nombre');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
-                $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->order_by('vigente','Asc');
+                $crud->field_type('total_alumnos', 'dropdown', range(1,40));
+                //$crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
+                //$crud->order_by('vigente','Asc');
                 $crud->display_as('reporte_SIT','Reporte del SIT');
                 $crud->unset_print();
                 $crud->unset_read();
@@ -141,7 +139,7 @@ Class Docencia extends CI_controller{
         }
 
 }
-               
+
  /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
