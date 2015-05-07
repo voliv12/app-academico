@@ -120,7 +120,7 @@ Class Docencia extends CI_controller{
                 $crud->set_relation('Academico_noPersonal','academico','nombre');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->field_type('total_alumnos', 'dropdown', range(1,40));
-                //$crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/');
                 //$crud->order_by('vigente','Asc');
                 $crud->display_as('reporte_SIT','Reporte del SIT');
                 $crud->unset_print();
