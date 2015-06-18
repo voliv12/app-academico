@@ -208,6 +208,8 @@ $(document).ready(function()
                   <li><a href="catalogos/posgrado"></i> Posgrado</a></li>
                   <li><a href="catalogos/lineas"></i> Lineas de investigación</a></li>
                   <li><a href="catalogos/fuentes"></i> Fuentes de financiamiento</a></li>
+                  <li><a href="catalogos/periodos"></i> Periodos</a></li>
+                  <li><a href="catalogos/bd_index"></i> Bases de Datos index</a></li>
                 </ul>
               </div>
               <li><a href="respaldo_bd"><img src="imagenes/database_save.png" title="Respaldar Base de Datos"></i></a></li>
@@ -308,6 +310,7 @@ $(document).ready(function()
                    <li><a href="institucional/alianzas/control"><i class="icon-random"></i> Vínculación</a></li>
                    <li><a href="institucional/reconocimientos/control"><i class="icon-certificate"></i> Reconocimientos</a></li>
                    <li><a href="institucional/eventos/control"><i class="icon-calendar"></i> Eventos académicos organizados</a></li>
+                   <li><a href="institucional/cursos/control"><i class="icon-plus"></i> Cursos de actualización</a></li>
                 </ul>
               </div>
               <div class="btn-group">

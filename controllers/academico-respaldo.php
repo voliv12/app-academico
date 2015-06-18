@@ -31,8 +31,7 @@ Class Academico extends CI_controller{
                 $crud->set_table('academico');
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
                 $crud->set_relation('departamento','departamento', 'nombre_depto');
-                $crud->unset_columns('noPersonal','grado','nombre_grado','direccion','rfc','curp','correos','licenciatura','titulo_cedula_lic','especialidad','titulo_cedula_esp','maestria','titulo_cedula_mae','doctorado','titulo_cedula_doc');
-                $crud->unset_fields('grado','nombre_grado');
+                $crud->unset_columns('noPersonal','direccion','rfc','curp','correos','licenciatura','titulo_cedula_lic','especialidad','titulo_cedula_esp','maestria','titulo_cedula_mae','doctorado','titulo_cedula_doc');
                 $crud->unset_add();
                 $crud->unset_delete();
                 $crud->display_as('titulo_cedula_lic','Titulo y Cédula Lic');

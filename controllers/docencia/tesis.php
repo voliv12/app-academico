@@ -33,6 +33,8 @@ Class Tesis extends CI_controller{
                 $crud->display_as('Academico_noPersonal','Núm. Personal');
                 $crud->set_subject('Tesis');
                 $crud->required_fields('intervencion','nombre_tesista','titulo_tesis','nivel','programa','fecha_presentacion');
+                $crud->set_relation('facultad','facultad','nombre_facultad');
+                $crud->set_relation('posgrado','posgrado','nombre_posgrado');
                 $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);

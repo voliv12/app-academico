@@ -33,8 +33,7 @@ Class Catedra extends CI_controller{
             $crud->display_as('Academico_noPersonal','Núm. Personal');
             $crud->set_subject('Cátedra');
             $crud->required_fields('nombre_catedra','nivel','programa','tipo','modalidad','periodo');
-            $crud->set_relation('facultad','facultad','nombre_facultad');
-            $crud->set_relation('posgrado','posgrado','nombre_posgrado');
+
             $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
             $crud->field_type('periodo', 'dropdown',  array('201401' => 'Agosto 2013 - Enero 2014',
                                                             '201451' => 'Febrero - Julio 2014',

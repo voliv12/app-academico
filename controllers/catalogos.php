@@ -122,6 +122,42 @@ Class Catalogos extends CI_controller{
                 redirect('login');
             }
         }
+
+        function periodos()
+        {
+            if ($this->session->userdata('logged_in') == TRUE && $this->session->userdata('administrar_usuarios') == "Si")
+            {
+                $crud = new grocery_CRUD();
+
+                $crud->set_table('cat_periodos');
+                $crud->order_by('codigo','DESC');
+
+                $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Catálogo de Periodos</h4></div>';
+                $this->_example_output($output);
+            }else
+            {
+                redirect('login');
+            }
+        }
+
+        function bd_index()
+        {
+            if ($this->session->userdata('logged_in') == TRUE && $this->session->userdata('administrar_usuarios') == "Si")
+            {
+                $crud = new grocery_CRUD();
+
+                $crud->set_table('bases_index');
+
+                $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Catálogo de Bases de Datos index</h4></div>';
+                $this->_example_output($output);
+            }else
+            {
+                redirect('login');
+            }
+        }
+
 }
  /*
  * To change this template, choose Tools | Templates

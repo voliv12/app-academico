@@ -158,3 +158,33 @@ PRIMARY KEY (  `idBases_index` )
 ##AGREGAR el campo periodo a tablas  y tutoria_sit
 ALTER TABLE  `tutoria_sit` ADD  `periodo` VARCHAR ( 100 )  NULL AFTER  `total_alumnos`
 
+
+ALTER TABLE `catedra` CHANGE `nivel` `nivel` ENUM( 'Licenciatura', 'Posgrado' ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+
+ALTER TABLE `catedra` CHANGE `programa` `facultad` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+
+ALTER TABLE `catedra` ADD `posgrado` VARCHAR( 255 ) NOT NULL AFTER `facultad`
+
+CREATE TABLE `informacion_academica`.`cursos_actualizacion` (
+`id_cursos_actualizacion` INT NOT NULL AUTO_INCREMENT ,
+`Academico_noPersonal` INT NOT NULL,
+`nombre_curso` VARCHAR( 255 ) NOT NULL ,
+`fecha_inicio` DATE NOT NULL ,
+`fecha_termino` DATE NOT NULL ,
+`horas` INT NOT NULL ,
+`constancia` VARCHAR( 255 ) NOT NULL ,
+PRIMARY KEY ( `id_cursos_actualizacion` )
+) ENGINE = MYISAM ;
+
+--ALTER TABLE `cursos_actualizacion` ADD `Academico_noPersonal` VARCHAR( 50 ) NOT NULL AFTER `id_cursos_actualizacion`
+
+CREATE TABLE `informacion_academica`.`cat_periodos` (
+`codigo` VARCHAR( 50 ) NOT NULL ,
+`descripcion` VARCHAR( 100 ) NOT NULL
+) ENGINE = MYISAM ;
+
+ALTER TABLE `tesis` CHANGE `nivel` `nivel` ENUM( 'Licenciatura', 'Posgrado' ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+
+ALTER TABLE `tesis` CHANGE `programa` `facultad` VARCHAR( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Nombre de la carrera o posgrado'
+
+ALTER TABLE `tesis` ADD `posgrado` VARCHAR( 250 ) NOT NULL AFTER `facultad`
