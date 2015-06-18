@@ -27,7 +27,7 @@ Class Institucional extends CI_controller{
                 $crud = new grocery_CRUD();
                 $crud->set_table('alianza');
                 $crud->display_as('institucion','Con');
-                $crud->set_relation('Academico_noPersonal','academico','nombre');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->display_as('Proyecto_idProyecto','Del proyecto');
                 $crud->set_subject('Vinculación');
@@ -72,7 +72,6 @@ Class Institucional extends CI_controller{
             }
         }
 
-
         function reconocimientos()
         {
              if ($this->session->userdata('logged_in') == TRUE)
@@ -80,7 +79,7 @@ Class Institucional extends CI_controller{
                 $crud = new grocery_CRUD();
                 $crud->set_table('reconocimiento');
                 $crud->set_subject('Reconocimiento');
-                $crud->set_relation('Academico_noPersonal','academico','nombre');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->unset_print();
                 $crud->unset_add();
@@ -91,6 +90,30 @@ Class Institucional extends CI_controller{
                 $crud->order_by('fecha','Desc');
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Reconocimientos</h4></div>';
+                $this->_example_output($output);
+            }else
+            {
+                redirect('login');
+            }
+        }
+
+        function cursos()
+        {
+             if ($this->session->userdata('logged_in') == TRUE)
+            {
+                $crud = new grocery_CRUD();
+                $crud->set_table('cursos_actualizacion');
+                $crud->set_subject('Cursos de Actualización');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
+                $crud->display_as('Academico_noPersonal','Nombre de Académico');
+                $crud->set_field_upload('constancia', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->unset_print();
+                $crud->unset_add();
+                $crud->unset_edit();
+                $crud->unset_delete();
+                //$crud->unset_read();
+                $output = $crud->render();
+                $output->titulo_tabla = '<div class="alert alert-success"><h4>Cursos de Actualización</h4></div>';
                 $this->_example_output($output);
             }else
             {

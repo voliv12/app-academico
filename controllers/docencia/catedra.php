@@ -36,21 +36,7 @@ Class Catedra extends CI_controller{
             $crud->set_relation('facultad','facultad','nombre_facultad');
             $crud->set_relation('posgrado','posgrado','nombre_posgrado');
             $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-            $crud->field_type('periodo', 'dropdown',  array('201401' => 'Agosto 2013 - Enero 2014',
-                                                            '201451' => 'Febrero - Julio 2014',
-                                                            '201501' => 'Agosto 2014 - Enero 2015' ,
-                                                            '201551' => 'Febrero - Julio 2015',
-                                                            '201601' => 'Agosto 2015 - Enero 2016',
-                                                            '201651' => 'Febrero - Julio 2016',
-                                                            '201701' => 'Agosto 2016 - Enero 2017',
-                                                            '201751' => 'Febrero - Julio 2017',
-                                                            '201801' => 'Agosto 2017 - Enero 2018',
-                                                            '201851' => 'Febrero - Julio 2018',
-                                                            '201901' => 'Agosto 2018 - Enero 2019',
-                                                            '201951' => 'Febrero - Julio 2019',
-                                                            '202001' => 'Agosto 2019 - Enero 2020',
-                                                            '202051' => 'Febrero - Julio 2020'
-                                                            ));
+            $crud->set_relation('periodo','cat_periodos','descripcion');
             $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
             $crud->set_rules('documento','Documento','max_length[26]');
             $crud->callback_add_field('programa',array($this,'add_field_programa'));

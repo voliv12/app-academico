@@ -47,7 +47,12 @@ Class Personal_academico extends CI_controller{
             $crud->set_table('academico');
             $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
             $crud->set_relation('departamento', 'departamento', 'nombre_depto');
-            $crud->columns('noPersonal','nombre','categoria','grado','departamento');
+            $crud->columns('noPersonal','nombre','categoria','departamento');
+            $crud->unset_fields('grado','nombre_grado');
+            $crud->set_field_upload('titulo_cedula_lic', 'assets/uploads/academicos/');
+            $crud->set_field_upload('titulo_cedula_esp', 'assets/uploads/academicos/');
+            $crud->set_field_upload('titulo_cedula_mae', 'assets/uploads/academicos/');
+            $crud->set_field_upload('titulo_cedula_doc', 'assets/uploads/academicos/');
             $crud->unset_add()->unset_delete()->unset_edit();
             $crud->order_by('nombre', 'asc');
 

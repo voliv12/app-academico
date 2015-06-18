@@ -31,7 +31,7 @@ Class Docencia extends CI_controller{
                 $crud->set_subject('Cátedra');
                 $crud->order_by('estado','Asc');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
-                $crud->set_relation('Academico_noPersonal','academico','nombre');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->unset_print();
                 $crud->unset_add();
@@ -85,7 +85,9 @@ Class Docencia extends CI_controller{
                 $crud->set_table('tesis');
                 $crud->set_subject('Tesis');
                 $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
-                $crud->set_relation('Academico_noPersonal','academico','nombre');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
+                $crud->set_relation('facultad','facultad','nombre_facultad');
+                $crud->set_relation('posgrado','posgrado','nombre_posgrado');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_presentacion','Desc');
@@ -117,10 +119,10 @@ Class Docencia extends CI_controller{
                 $crud->set_subject('Tutoria');
                 $crud->set_relation('facultad','facultad','nombre_facultad');
                 $crud->set_relation('posgrado','posgrado','nombre_posgrado');
-                $crud->set_relation('Academico_noPersonal','academico','{noPersonal}-{nombre}');
+                $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
-                $crud->field_type('total_alumnos', 'dropdown', range(1,40));
-                $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/');
+                //$crud->field_type('total_alumnos', 'dropdown', range(1,40));
+                $crud->set_field_upload('reporte_SIT', 'assets/uploads/academicos/'.$this->noPersonal);
                 //$crud->order_by('vigente','Asc');
                 $crud->display_as('reporte_SIT','Reporte del SIT');
                 $crud->unset_print();

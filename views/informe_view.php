@@ -182,6 +182,7 @@
                    <li><a href="informe/Institucional/alianzas"> Vínculación</a></li>
                    <li><a href="informe/Institucional/reconocimientos"> Reconocimientos</a></li>
                    <li><a href="informe/Institucional/eventos"> Eventos académicos organizados</a></li>
+                   <li><a href="informe/Institucional/cursos"> Cursos de actualización</a></li>
                  </ul>
               </div>
             </div>
