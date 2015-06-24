@@ -43,8 +43,8 @@ Class Tutorias_sit extends CI_controller{
                 $crud->set_rules('reporte_SIT','Reporte del SIT','max_length[26]');
                 $crud->order_by('vigente','Asc');
                 $crud->display_as('reporte_SIT','Reporte del SIT');
-                $crud->callback_before_insert(array($this,'action_callback'));
-                $crud->callback_before_update(array($this,'action_callback'));
+                //$crud->callback_before_insert(array($this,'action_callback'));
+                //$crud->callback_before_update(array($this,'action_callback'));
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Tutorías</h4></div>';
