@@ -31,14 +31,15 @@ Class Academico extends CI_controller{
                 $crud->set_table('academico');
                 $crud->set_relation('categoria', 'categoria', 'nombre_categoria');
                 $crud->set_relation('departamento','departamento', 'nombre_depto');
-                $crud->unset_columns('noPersonal','grado','nombre_grado','direccion','rfc','curp','correos','licenciatura','titulo_cedula_lic','especialidad','titulo_cedula_esp','maestria','titulo_cedula_mae','doctorado','titulo_cedula_doc');
-                $crud->unset_fields('grado','nombre_grado');
+                $crud->unset_columns('noPersonal','nombre_grado','direccion','rfc','curp','correos','licenciatura','titulo_cedula_lic','especialidad','titulo_cedula_esp','maestria','titulo_cedula_mae','doctorado','titulo_cedula_doc');
+                $crud->unset_fields('nombre_grado');
                 $crud->unset_add();
                 $crud->unset_delete();
                 $crud->display_as('titulo_cedula_lic','Titulo y Cédula Lic');
                 $crud->display_as('titulo_cedula_esp','Titulo y Cédula Esp');
                 $crud->display_as('titulo_cedula_mae','Titulo y Cédula Mae');
                 $crud->display_as('titulo_cedula_doc','Titulo y Cédula Doc');
+                $crud->display_as('grado','Ultimo grado de estudios');
                 $crud->field_type('noPersonal','readonly');
                 $crud->set_field_upload('titulo_cedula_lic', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_field_upload('titulo_cedula_esp', 'assets/uploads/academicos/'.$this->noPersonal);
