@@ -82,13 +82,16 @@ Class Investigacion extends CI_controller{
                 $crud->set_relation('Academico_noPersonal','academico','nombre');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->display_as('Proyecto_idProyecto','Proyecto')->display_as('Cuerpo_idCuerpo','Cuerpo Académico')->display_as('Posgrado_idPosgrado','Posgrado');
+                $crud->set_relation('Fuente_idFuente','fuente','Fuente');
+                $crud->set_relation('Proyecto_idProyecto','proyecto','Titulo');
+                $crud->set_relation('Cuerpo_idCuerpo','cuerpo','nombre_CA');
                 $crud->display_as('Fuente_idFuente','Fuente');
                 $crud->set_subject('Financiamiento');
                 $crud->set_relation('Fuente_idFuente','fuente','Fuente');
                 $crud->set_relation('Proyecto_idProyecto','proyecto','Titulo');
                 $crud->set_relation('Cuerpo_idCuerpo','cuerpo','nombre_CA');
                 $crud->set_relation('Posgrado_idPosgrado','posgrado','nombre_posgrado');
-                $crud->columns('Academico_noPersonal','Destino','Fuente_idFuente','Otra_fuente','Monto');
+                //$crud->columns('Academico_noPersonal','Destino','Fuente_idFuente','Otra_fuente','Monto');
                 $crud->order_by('Estado','Asc');
                 $crud->unset_print();
                 $crud->unset_add();
