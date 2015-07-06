@@ -32,7 +32,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation('autor_correspondencia','academico','nombre');
             $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
-            $crud->columns('fecha','titulo','autor','autor_principal','autor_correspondencia','nombre_revista','estatus','cuerpo_academico','tipo');
+            //$crud->columns('fecha','titulo','autor','autor_principal','autor_correspondencia','nombre_revista','estatus','cuerpo_academico','tipo');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('estatus','DESC');
@@ -56,7 +56,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_table('libro');
             $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
             $crud->set_relation_n_n('participantes', 'libro_academico', 'academico', 'idLibro', 'noPersonal', 'nombre','priority');
-            $crud->columns('fecha','titulo','autor','participantes','cuerpo_academico','tipo');
+            //$crud->columns('fecha','titulo','autor','participantes','cuerpo_academico','tipo');
             $crud->display_as('autor','Editor(es)');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('fecha','DESC');
@@ -81,7 +81,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation('autor_principal','academico','nombre');
             $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
             $crud->set_relation_n_n('participantes', 'capitulo_academico', 'academico', 'idCapitulo', 'noPersonal', 'nombre','priority');
-            $crud->columns('fecha','titulo','autor','autor_principal','autor_libro','titulo_libro','editorial','cuerpo_academico','tipo');
+            //$crud->columns('fecha','titulo','autor','autor_principal','autor_libro','titulo_libro','editorial','cuerpo_academico','tipo');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('fecha','DESC');
