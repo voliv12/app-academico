@@ -38,6 +38,8 @@ Class Listar_publicaciones extends CI_controller{
             $crud->field_type('posicion','dropdown',range(1, 20));
             $crud->field_type('autocitas','dropdown',range(1, 50));
             $crud->field_type('citas_externas','dropdown',range(1, 50));
+            $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
+            $crud->set_relation('indizada_en','bases_index','nombre_base');
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('estatus','DESC');
 
