@@ -34,6 +34,10 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
             //$crud->columns('fecha','titulo','autor','autor_principal','autor_correspondencia','nombre_revista','estatus','cuerpo_academico','tipo');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
+            $crud->field_type('total_autores','dropdown',range(1, 20));
+            $crud->field_type('posicion','dropdown',range(1, 20));
+            $crud->field_type('autocitas','dropdown',range(1, 50));
+            $crud->field_type('citas_externas','dropdown',range(1, 50));
             $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
             $crud->order_by('estatus','DESC');
 
