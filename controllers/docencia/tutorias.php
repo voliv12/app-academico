@@ -18,7 +18,6 @@ Class Tutorias extends CI_controller{
             $datos_plantilla['titulo'] = "Tutorías";
             $datos_plantilla['contenido'] = $this->load->view('output_view.php',$output, TRUE);
             $this->load->view('plantilla_view', $datos_plantilla);
-
         }
 
         function control()
