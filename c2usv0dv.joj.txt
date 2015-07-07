@@ -1,0 +1,15 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    base_de_datos/actualizacion-paraBorrar.sql
+#	deleted:    controllers/docencia/tutorias_sit-respaldo.php
+#	deleted:    controllers/informe/departamento-1aVersion.php
+#	deleted:    controllers/informe/publicaciones.php
+#	deleted:    controllers/publicaciones/articulos - copia.php
+#	deleted:    views/informe/departamento_view-1aVersion.php
+#
+
