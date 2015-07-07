@@ -86,8 +86,8 @@ Class Docencia extends CI_controller{
                 $crud->set_subject('Tesis');
                 $crud->display_as('intervencion','Intervención')->display_as('titulo_tesis','Título tesis')->display_as('fecha_presentacion','Fecha presentación');
                 $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
-                //$crud->set_relation('facultad','facultad','nombre_facultad');
-                //$crud->set_relation('posgrado','posgrado','nombre_posgrado');
+                $crud->set_relation('facultad','facultad','nombre_facultad');
+                $crud->set_relation('posgrado','posgrado','nombre_posgrado');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->order_by('fecha_presentacion','Desc');
