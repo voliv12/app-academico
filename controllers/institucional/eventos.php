@@ -35,7 +35,7 @@ Class Eventos extends CI_controller{
                 $crud->required_fields('nombre_evento','organizadores','fecha');
                 $crud->unset_texteditor('descripcion','full_text');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
-                $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
+                $crud->set_field_upload('constancia', 'assets/uploads/academicos/'.$this->noPersonal);
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Eventos académicos organizados</h4></div>';
