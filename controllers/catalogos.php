@@ -28,10 +28,11 @@ Class Catalogos extends CI_controller{
                 $crud = new grocery_CRUD();
 
                 $crud->set_table('categoria');
+                $output->required_fields('nombre_categoria','perfil');
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Catálogo de Categorías</h4></div>';
-                $output->required_fields('nombre_categoria','perfil');
+
                 $this->_example_output($output);
             }else
             {
