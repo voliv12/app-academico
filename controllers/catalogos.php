@@ -31,6 +31,7 @@ Class Catalogos extends CI_controller{
 
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Catálogo de Categorías</h4></div>';
+                $output->required_fields('nombre_categoria','perfil');
                 $this->_example_output($output);
             }else
             {
