@@ -35,20 +35,20 @@ Class Academico extends CI_controller{
                 $crud->unset_fields('nombre_grado');
                 $crud->unset_add();
                 $crud->unset_delete();
-                $crud->display_as('titulo_cedula_lic','Titulo y Cédula Lic');
+                /*$crud->display_as('titulo_cedula_lic','Titulo y Cédula Lic');
                 $crud->display_as('titulo_cedula_esp','Titulo y Cédula Esp');
                 $crud->display_as('titulo_cedula_mae','Titulo y Cédula Mae');
-                $crud->display_as('titulo_cedula_doc','Titulo y Cédula Doc');
+                $crud->display_as('titulo_cedula_doc','Titulo y Cédula Doc');*/
                 $crud->display_as('grado','Ultimo grado de estudios');
                 $crud->field_type('noPersonal','readonly');
-                $crud->set_field_upload('titulo_cedula_lic', 'assets/uploads/academicos/'.$this->noPersonal);
+                /*$crud->set_field_upload('titulo_cedula_lic', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_field_upload('titulo_cedula_esp', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_field_upload('titulo_cedula_mae', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_field_upload('titulo_cedula_doc', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_rules('titulo_cedula_lic','Titulo y Cédula Lic','max_length[26]');
                 $crud->set_rules('titulo_cedula_esp','Titulo y Cédula Esp','max_length[26]');
                 $crud->set_rules('titulo_cedula_mae','Titulo y Cédula Mae','max_length[26]');
-                $crud->set_rules('titulo_cedula_doc','Titulo y Cédula Doc','max_length[26]');
+                $crud->set_rules('titulo_cedula_doc','Titulo y Cédula Doc','max_length[26]');*/
                 $output = $crud->render();
                 $output->titulo_tabla = '<div class="alert alert-success"><h4>Información personal del Académico</h4></div>';
                 $this->_example_output($output);
