@@ -37,7 +37,7 @@ Class Financiamiento extends CI_controller{
                 $crud->required_fields('Destino','Fuente_idFuente','Periodo','Estado','Monto');
                 $crud->set_rules('Monto','Monto','required|numeric');
                 $crud->set_relation('Fuente_idFuente','fuente','Fuente');
-                $crud->set_relation('Proyecto_idProyecto','proyecto','Titulo');
+                $crud->set_relation('Proyecto_idProyecto','proyecto','Titulo', array('Academico_noPersonal' => $this->noPersonal));
                 $crud->set_relation('Cuerpo_idCuerpo','cuerpo','nombre_CA');
                 $crud->set_relation('Posgrado_idPosgrado','posgrado','nombre_posgrado');
                 $crud->field_type('Academico_noPersonal', 'hidden', $this->noPersonal);
