@@ -32,6 +32,8 @@ Class Docencia extends CI_controller{
                 $crud->order_by('estado','Asc');
                 $crud->set_field_upload('documento', 'assets/uploads/academicos/'.$this->noPersonal);
                 $crud->set_relation('Academico_noPersonal','academico','{noPersonal} - {nombre}');
+                $crud->set_relation('facultad','facultad','nombre_facultad');
+                $crud->set_relation('posgrado','posgrado','nombre_posgrado');
                 $crud->display_as('Academico_noPersonal','Nombre de Académico');
                 $crud->unset_print();
                 $crud->unset_add();
