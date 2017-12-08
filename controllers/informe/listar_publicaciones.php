@@ -40,7 +40,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->field_type('citas_externas','dropdown',range(1, 50));
             $crud->set_relation('cuerpo_academico','cuerpo','nombre_CA');
             $crud->set_relation('indizada_en','bases_index','nombre_base');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
             $crud->order_by('estatus','DESC');
 
 
@@ -64,7 +64,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'libro_academico', 'academico', 'idLibro', 'noPersonal', 'nombre','priority');
             //$crud->columns('fecha','titulo','autor','participantes','cuerpo_academico','tipo');
             $crud->display_as('autor','Editor(es)');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
             $crud->order_by('fecha','DESC');
 
 
@@ -89,7 +89,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'capitulo_academico', 'academico', 'idCapitulo', 'noPersonal', 'nombre','priority');
             //$crud->columns('fecha','titulo','autor','autor_principal','autor_libro','titulo_libro','editorial','cuerpo_academico','tipo');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
             $crud->order_by('fecha','DESC');
 
 
@@ -115,7 +115,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
             $crud->columns('idArticulo','nombre_depto','titulo','nombre_revista','autor','autor_principal','participantes','fecha');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
 
             $output = $crud->render();
             $output->titulo_tabla = '<div class="alert alert-success"><h4>Artículos por Departamento</h4></div>';
@@ -136,7 +136,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_primary_key('idLibro');
             $crud->set_relation_n_n('participantes', 'libro_academico', 'academico', 'idLibro', 'noPersonal', 'nombre','priority');
             $crud->columns('idLibro','nombre_depto','titulo','autor','participantes','fecha');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
             $output = $crud->render();
             $output->titulo_tabla = '<div class="alert alert-success"><h4>Libros por Departamento</h4></div>';
             $this->_example_output($output);
@@ -158,7 +158,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'capitulo_academico', 'academico', 'idCapitulo', 'noPersonal', 'nombre','priority');
             $crud->columns('idCapitulo','nombre_depto','titulo','titulo_libro','editorial','autor','autor_principal','participantes','fecha');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
 
             $output = $crud->render();
             $output->titulo_tabla = '<div class="alert alert-success"><h4>Capítulos por Departamento</h4></div>';
@@ -182,7 +182,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'articulo_academico', 'academico', 'idArticulo', 'noPersonal', 'nombre','priority');
             $crud->columns('idArticulo','nombre_depto','titulo','autor','autor_principal','participantes','fecha');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
 
             $output = $crud->render();
             $output->titulo_tabla = '<div class="alert alert-success"><h4>Colaboración entre Departamentos en Artículos</h4></div>';
@@ -205,7 +205,7 @@ Class Listar_publicaciones extends CI_controller{
             $crud->set_relation_n_n('participantes', 'capitulo_academico', 'academico', 'idCapitulo', 'noPersonal', 'nombre','priority');
             $crud->columns('idCapitulo','nombre_depto','titulo','autor','autor_principal','participantes','fecha');
             $crud->display_as('autor','Autor(es) como aparecen en la publicación');
-            $crud->unset_add()->unset_edit()->unset_delete()->unset_print();
+            $crud->unset_add()->unset_print();
 
             $output = $crud->render();
             $output->titulo_tabla = '<div class="alert alert-success"><h4>Colaboración entre Departamentos en Capítulos</h4></div>';
