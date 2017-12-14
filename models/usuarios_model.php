@@ -74,6 +74,7 @@ class Usuarios_model extends CI_Model
         $this->db->select('*');
         $this->db->from('academico');
         $this->db->join('categoria','academico.categoria = categoria.idCategoria');
+        $this->db->where('academico.estatus','Activo');
         $this->db->like('categoria.nombre_categoria','TECNICO'); //busco los TECNICOS ACADEMICOS
         //$this->db->like('categoria.nombre','M.T'); //que sean de TIEMPO COMPLETO
         return $this->db->count_all_results();
