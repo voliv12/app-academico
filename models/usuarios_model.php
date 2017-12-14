@@ -54,6 +54,7 @@ class Usuarios_model extends CI_Model
         $this->db->join('categoria','academico.categoria = categoria.idCategoria');
         $this->db->like('categoria.nombre_categoria','CARRERA'); //busco los ACADEMICOS DE CARRERA (investigadores)
         $this->db->like('categoria.nombre_categoria','T.C'); //que sean de TIEMPO COMPLETO
+        $this->db->and('academico.estatus','Activo'); //que esten activos en el Instituto
         return $this->db->count_all_results();
      }
 
@@ -64,6 +65,7 @@ class Usuarios_model extends CI_Model
         $this->db->join('categoria','academico.categoria = categoria.idCategoria');
         $this->db->like('categoria.nombre_categoria','CARRERA'); //busco los ACADEMICOS DE CARRERA (investigadores)
         $this->db->like('categoria.nombre_categoria','M.T'); //que sean de MEDIO TIEMPO
+        $this->db->and('academico.estatus','Activo'); //que esten activos en el Instituto
         return $this->db->count_all_results();
      }
 
